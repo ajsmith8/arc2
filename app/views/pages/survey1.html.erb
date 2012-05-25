@@ -1,0 +1,12 @@
+What % of your friends know more about this topic than you?
+
+<%=form_for @friend_question1, html:{"data-ajax"=>"false"} do |f| %>
+<div>
+	<label for="timeout">Timeout:</label>
+ 	<input type="range" name="temp_activity[friend_question1]" id="timeout" value="5" min="1" max="10" step="1" />
+	<style media="screen" type="text/css">
+	input.ui-slider-input {display: none;}
+	</style>
+</div>
+	<%= f.submit %>
+<% end %>

@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  t_id: 1
+  question: MyString
+  title: MyString
+  description: MyText
+  score: 1
+  is_pro: false
+  correct_answer: MyString
+  wrong_answer1: MyString
+  wrong_answer2: MyString
+  wrong_answer3: MyString
+
+two:
+  t_id: 1
+  question: MyString
+  title: MyString
+  description: MyText
+  score: 1
+  is_pro: false
+  correct_answer: MyString
+  wrong_answer1: MyString
+  wrong_answer2: MyString
+  wrong_answer3: MyString

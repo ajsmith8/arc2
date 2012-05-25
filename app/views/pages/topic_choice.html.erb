@@ -1,0 +1,25 @@
+<div data-role = "page">
+	<div data-role = "header" data-position = "fixed">
+		<h1>fuseGap</h1>
+	</div>
+	<div data-role = "content">
+		<p style = "text-align: center">Please select one of the following:</p>
+		<ul data-role = "listview">
+			<% @topicchoices.each do |i|%>
+			<li><%= link_to(T.find_by_id(i.id).title, choose_t_path(T.find_by_id(i.id)), "data-theme"=>"") %></li>
+			<% end %>
+		</ul>
+	</div>
+	
+	
+	
+	<div data-role = "footer" data-position = "fixed">
+		<h1>fuseGap</h1>
+	</div>	
+</div>
+
+
+<% @topicchoices.each do |i| %>
+	<% temp = T.find_by_id(i.id)%>
+	<%= temp.title %>
+<% end %>

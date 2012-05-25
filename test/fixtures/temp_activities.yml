@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  user_id: 1
+  political_view: MyString
+  categories: MyString
+  t1_id: 1
+  t2_id: 1
+  friend_question1: MyString
+  friend_question2: MyString
+  friend_question3: MyString
+  friend_question4: MyString
+  why_fail1: MyString
+  why_fail2: MyString
+
+two:
+  user_id: 1
+  political_view: MyString
+  categories: MyString
+  t1_id: 1
+  t2_id: 1
+  friend_question1: MyString
+  friend_question2: MyString
+  friend_question3: MyString
+  friend_question4: MyString
+  why_fail1: MyString
+  why_fail2: MyString

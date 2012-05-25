@@ -1,0 +1,98 @@
+<div data-role = "page" id = "reason1" data-url = "/ts/<%= @topic.url %>/tutorial1">
+	<%= @reason1.title %></br>
+	<%= @reason1.t_id %></br>
+	1/4
+	<div>
+	<a href = "#reason2" data-role = "button">Got It</a>
+	</div>
+	<div>
+	<a href = "#reason1info" data-role = "button">More Info</a>
+	</div>
+</div>
+
+<div data-role = "page" id = "reason1info">
+	<%= @reason1.description %></br>
+	<%= @reason1.t_id %>
+	<div>
+	<a href = "#reason2" data-role = "button">Got It</a>
+	</div>
+	<div>
+	<a href = "#dispute" data-role = "button">Dispute Source</a>
+	</div>
+</div>
+
+<div data-role = "page" id = "dispute">
+	Under construction, sorry!
+	<div>
+	<a href = "#" data-role = "button", data-rel ="back">Back</a>
+	</div>
+</div>
+
+<div data-role = "page" id = "reason2">
+	<%= @reason2.title %></br>
+	<%= @reason2.t_id %></br>
+	2/4
+	<div>
+	<a href = "#reason3" data-role = "button">Got It</a>
+	</div>
+	<div>
+	<a href = "#reason2info" data-role = "button">More Info</a>
+	</div>
+</div>
+
+<div data-role = "page" id = "reason2info">
+	<%= @reason2.description %></br>
+	<%= @reason2.t_id %>
+	<div>
+	<a href = "#reason3" data-role = "button">Got It</a>
+	</div>
+	<div>
+	<a href = "#dispute" data-role = "button">Dispute Source</a>
+	</div>
+</div>
+
+<div data-role = "page" id = "reason3">
+	<%= @reason3.title %></br>
+	<%= @reason3.t_id %></br>
+	3/4
+	<div>
+	<a href = "#reason4" data-role = "button">Got It</a>
+	</div>
+	<div>
+	<a href = "#reason3info" data-role = "button">More Info</a>
+	</div>
+</div>
+
+<div data-role = "page" id = "reason3info">
+	<%= @reason3.description %></br>
+	<%= @reason3.t_id %>
+	<div>
+	<a href = "#reason4" data-role = "button">Got It</a>
+	</div>
+	<div>
+	<a href = "#dispute" data-role = "button">Dispute Source</a>
+	</div>
+</div>
+
+<div data-role = "page" id = "reason4">
+	<%= @reason4.title %></br>
+	<%= @reason4.t_id %></br>
+	4/4
+	<div>
+	<%= link_to("Got It", survey2_path, "data-role"=> "button", "data-ajax"=>"false") %>
+	</div>
+	<div>
+	<a href = "#reason4info" data-role = "button">More Info</a>
+	</div>
+</div>
+
+<div data-role = "page" id = "reason4info">
+	<%= @reason4.description %></br>
+	<%= @reason4.t_id %>
+	<div>
+	<%= link_to("Got It", survey2_path, "data-role"=> "button", "data-ajax"=>"false") %>
+	</div>
+	<div>
+	<a href = "#dispute" data-role = "button">Dispute Source</a>
+	</div>
+</div>

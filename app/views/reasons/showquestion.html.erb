@@ -1,0 +1,176 @@
+<div data-role = "page" id = "reason">
+	<%= @hash %></br>
+	<%= @reason  %></br>
+	<%= @counter  %> of 4
+	<div>
+	<a href = "#quizquestion" data-role = "button">Got It</a>
+	</div>
+	<div>
+	<a href = "#reasoninfo" data-role = "button">More Info</a>
+	</div>
+</div>
+
+<div data-role = "page" id = "reasoninfo">
+	<%= @reason.description %></br>
+	<%= @reason.t_id %>
+	<div>
+	<a href = "#quizquestion" data-role = "button">Got It</a>
+	</div>
+	<div>
+	<a href = "#dispute" data-role = "button">Dispute Source</a>
+	</div>
+</div>
+
+<div data-role = "page" id = "quizquestion">
+	<div data-role="header" data-theme="c" style="white-space: normal; min-height: 1em;
+		padding: 0.3em 0.3em 0.3em 0.3em">	
+		<p style="margin:0; text-align: center; line-height:135%; font-size: 0.9em;"> <%=@reason.question%></p>
+	</div>
+	
+	<% i = 0 %>
+	<% j = 0 %>
+	<% index = rand(4) %>
+	<% while i < 4 %>
+		<% if i == index %>
+			<div style="margin:0.65em 0 0.65em 0; font-size: 0.8em;">
+				<a href="#correct" data-role="button", data-icon="check"> 
+					<div style="white-space: normal; margin: 0 -1em 0 -0.8em;">
+						<%=@reason.correct_answer%> 
+					</div>
+				</a>	
+			</div>
+		<% elsif j == 0 %>	
+			<div style="margin:0.65em 0 0.65em 0; font-size: 0.8em;">
+				<a href="#wrong" data-role="button", data-icon="check"> 
+					<div style="white-space: normal; margin: 0 -1em 0 -0.8em;">
+						<%=@reason.wrong_answer1%> 
+					</div>
+				</a>	
+			</div>
+			<% j += 1%>
+		<% elsif j == 1 && @reason.wrong_answer2 != "<blank>"%>
+			<div style="margin:0.65em 0 0.65em 0; font-size: 0.8em;">
+				<a href="#wrong" data-role="button", data-icon="check"> 
+					<div style="white-space: normal; margin: 0 -1em 0 -0.8em;">
+						<%=@reason.wrong_answer2%> 
+					</div>
+				</a>	
+			</div>
+			<% j += 1%>
+		<% elsif @reason.wrong_answer3 != "<blank>"%>
+			<div style="margin:0.65em 0 0.65em 0; font-size: 0.8em;">
+				<a href="#wrong" data-role="button", data-icon="check"> 
+					<div style="white-space: normal; margin: 0 -1em 0 -0.8em;">
+						<%=@reason.wrong_answer3%> 
+					</div>
+				</a>	
+			</div>
+			<% j += 1%>
+		<% end %>				
+		<% i += 1%>
+  <% end %>	
+	
+</div>
+
+<div data-role="page" id="correct">
+	<div style="white-space: normal; min-height: 1em; padding: 0.4em; margin: 0 0 1.2em 0;">
+		<div class="ui-grid-b">
+			<div class="ui-block-a">	
+				<p style="margin: 1em 0 0 0; text-align: center; color: #33cc33; font-size: 1.15em; font-weight: bold;">
+					Correct!</p>
+			</div>
+			<div class = "ui-block-b">
+				
+			</div>
+			<div class="ui-block-c">	
+				<p style="margin: 1em 0 0 0; text-align: center; color: #33cc33; font-size: 1.15em; font-weight: bold;">
+					Awesome!</p>
+			</div>
+		</div>	
+	</div>
+	
+	<div data-role="header" data-theme="c" style="white-space: normal; min-height: 1em;
+		padding: 0.4em 0.3em 0.4em 0.3em">	
+		<p style="margin:0; text-align: center; line-height:135%;"><%= @reason.title %></p>
+	</div>
+
+	<div style="height: 0.5em;"></div>
+	<div style="margin: 1.6em 3.5em 2em 3.5em;">	
+		<%=form_for @activity, html:{"data-ajax"=>"false"} do |f| %>
+			<% if @counter == 1 %>
+				<%= f.hidden_field :quiz1, value: true %>
+				<%= f.submit "Next" %>
+			<% end %>
+			<% if @counter == 2 %>
+				<%= f.hidden_field :quiz2, value: true %>
+				<%= f.submit "Next" %>
+			<% end %>
+			<% if @counter == 3 %>
+				<%= f.hidden_field :quiz3, value: true %>
+				<%= f.submit "Next" %>
+			<% end %>
+			<% if @counter == 4 %>
+				<%= f.hidden_field :quiz4, value: true %>
+				<%= f.submit "Next" %>
+			<% end %>
+		<% end %>
+	</div>
+</div>
+
+<div data-role="page" id="wrong">
+	<div style="white-space: normal; min-height: 1em; padding: 0.4em; margin: 0 0 1.2em 0;">
+		<div class="ui-grid-b">
+			<div class="ui-block-a">	
+				<p style="margin: 1em 0 0 0; text-align: center; color: #ff0000; font-size: 1.15em; font-weight: bold;">
+					Wrong!</p>
+			</div>
+			<div class="ui-block-b">
+			
+			</div>
+			<div class="ui-block-c">	
+				<p style="margin: 1em 0 0 0; text-align: center; color: #ff0000; font-size: 1.15em; font-weight: bold;">
+					Fail!</p>
+			</div>
+		</div>	
+	</div>
+	
+	<div data-role="header" data-theme="a" style="white-space: normal; min-height: 1em;
+		padding: 0.4em 0.3em 0.4em 0.3em">	
+		<p style="margin:0; text-align: center; line-height:135%;">Correct Answer: <%=@reason.correct_answer%></p>
+	</div>
+	<div data-role="header" data-theme="c" style="white-space: normal; min-height: 1em;
+		padding: 0.4em 0.3em 0.4em 0.3em">	
+		<p style="margin:0; text-align: center; line-height:135%;"><%= @reason.title %></p>
+	</div>
+
+	
+
+	<div style="height: 0.5em;"></div>
+	<div style="margin: 1.6em 3.5em 2em 3.5em;">	
+		<%=form_for @activity, html:{"data-ajax"=>"false"} do |f| %>
+			<% if @counter == 1 %>
+				<%= f.hidden_field :quiz1, value: false %>
+				<%= f.submit "Next" %>
+			<% end %>
+			<% if @counter == 2 %>
+				<%= f.hidden_field :quiz2, value: false %>
+				<%= f.submit "Next" %>
+			<% end %>
+			<% if @counter == 3 %>
+				<%= f.hidden_field :quiz3, value: false %>
+				<%= f.submit "Next" %>
+			<% end %>
+			<% if @counter == 4 %>
+				<%= f.hidden_field :quiz4, value: false %>
+				<%= f.submit "Next" %>
+			<% end %>
+		<% end %>
+	</div>		 
+</div>
+
+<div data-role = "page" id = "dispute">
+	Under construction, sorry!
+	<div>
+	<a href = "#" data-role = "button", data-rel ="back">Back</a>
+	</div>
+</div>
