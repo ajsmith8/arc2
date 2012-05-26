@@ -11,7 +11,13 @@ class TsController < ApplicationController
   end
   
   def edit
+    @category_relationship = CategoryRelationship.new
     @topic = T.find_by_url(params[:id])
+    foo = CategoryRelationship.where(t_id: @topic.id)
+    @ids = Array.new
+    foo.each do |i|
+      @ids.push i.category_id
+    end
   end
   
   def update
@@ -85,4 +91,32 @@ class TsController < ApplicationController
       @reason4 = pros[1]
     end
   end
+  
+  def votepros
+     @topic = T.find_by_url(params[:id])
+     @pros = Reason.where(t_id: @topic.id, is_pro: true)
+
+     unless @pros.empty?
+       @pros.sort! { |b,a| a.score <=> b.score} 
+     end
+   end
+
+   def votecons
+     @topic = T.find_by_url(params[:id])
+     @cons = Reason.where(t_id: @topic.id, is_pro: false)
+
+     unless @cons.empty?
+       @cons.sort! { |b,a| a.score <=> b.score}
+     end
+   end
+   
+   def update
+     @topic = T.find_by_url(params[:id])
+     @topic.update_attributes(params[:t])
+     redirect_to @topic
+   end
+   
+   def description
+     @topic = T.find_by_url(params[:id])
+   end
 end

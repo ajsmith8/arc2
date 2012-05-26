@@ -1,0 +1,65 @@
+<div class="ui-grid-b"> 
+	<div class="ui-block-a">
+		<div style="margin: 0 -1em 0 0">
+			<%= link_to("Cancel", @topic, "data-role" => "button", "data-theme"=>"e", "data-icon"=>"delete", "data-mini"=>"true")%>
+		</div>
+	</div>
+	<div class="ui-block-b"></div>
+	<div class="ui-block-c">
+
+	</div>
+</div>
+
+<%= form_for @reason, html:{"data-ajax"=>"false"} do |f| %>
+	<div class="action", style="margin: 0.5em 0 1.2em 0;">
+	  <%= f.label :title, "Reason", "style"=>"margin: 0em; font-size: 0.8em; text-align: center; font-weight: bold;"%>
+		<%= f.text_area :title, "style"=>"font-size: 0.9em;" %>
+	</div>
+
+	<div class="action">
+		<%= f.label :description, "Sources & Additional Info", "style"=>"margin: 0em; font-size: 0.8em; text-align: center; font-weight: bold;"%>
+	  <%= f.text_area :description, "style"=>"font-size: 0.9em;" %>
+	</div>
+	
+	<div data-role="collapsible">
+		<h2><span style="font-size: 0.9em; color: #3059AC;">Quiz:</span><span style="font-size: 0.9em;"> Question & Answers</span></h2>
+		<div class="field", style="margin: 0 0 -1em 0;">
+	    <%= f.label :question, "Question", "style"=>"margin: 0em; font-size: 0.8em; text-align: center; font-weight: bold;"%>
+			<%= f.text_area :question, "placeholder"=>"Type quiz question here..."%></br>
+	  </div>
+		<div class="field", style="margin: 0 0 -1em 0;">
+			<%= f.label :correct_answer, "Correct:", "style"=>"margin: 0em; font-size: 0.8em; text-align: center; font-weight: bold; color: #33cc33;"%>
+	    <%= f.text_field :correct_answer, "placeholder"=>"Correct Answer ..."%></br>
+	  </div>
+		<div class="field", style="margin: 0 0 -1em 0;">
+			<%= f.label :wrong_answer1, "Wrong1:", "style"=>"margin: 0em; font-size: 0.8em; text-align: center; font-weight: bold; color: #ff0000;"%>
+	    <%= f.text_field :wrong_answer1, "placeholder"=>"Wrong Answer 1 ..."%></br>
+	  </div>
+		<div class="field", style="margin: 0 0 -1em 0;">
+			<%= f.label :wrong_answer2, "Wrong2:", "style"=>"margin: 0em; font-size: 0.8em; text-align: center; font-weight: bold; color: #ff0000;"%>
+	    <%= f.text_field :wrong_answer2, "placeholder"=>"Wrong Answer 2 ..."%></br>
+	  </div>
+		<div class="field", style="margin: 0 0 -1em 0;">
+			<%= f.label :wrong_answer3, "Wrong3:", "style"=>"margin: 0em; font-size: 0.8em; text-align: center; font-weight: bold; color: #ff0000;"%>
+	    <%= f.text_field :wrong_answer3, "placeholder"=>"Wrong Answer 3 ..."%></br>
+	  </div>
+	</div>
+
+	<div class="ui-grid-b">
+		<div class="ui-block-a"></div>
+		<div class="ui-block-b">
+			<div class="actions", style="margin: 0.7em -0.5em 0.7em -0.5em">
+		    <%= f.submit "Submit All", "data-theme"=>"b", "data-mini"=>"true"%>
+		  </div>
+		</div>
+	</div>
+<% end %>
+
+<div class="ui-grid-b">
+	<div class="ui-block-a"></div>
+	<div class="ui-block-b">
+		<div style="margin: 0 -1.5em 0 -1.5em;">
+			<%= link_to("Delete Reason", @reason, method: :delete, "data-role" => "button", "data-theme"=>"a", "data-icon"=>"delete", "data-mini"=>"true", "data-ajax"=>"false")%>
+		</div>
+	</div>
+</div>

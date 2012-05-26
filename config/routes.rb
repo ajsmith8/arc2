@@ -13,16 +13,17 @@ Arc2::Application.routes.draw do
   
   resources :ts do
     member do 
-      get :choose, :tutorial1, :tutorial2
+      get :choose, :tutorial1, :tutorial2, :votepros, :votecons, :description
     end
   end
   
   resources :reasons do
     member do 
-      get :showquestion
+      get :showquestion, :upvote, :downvote
     end
   end
   
+  match "/admin", to: "ts#index"
   match "/thanks", to: "pages#thanks"
   match "/feedback2", to: "pages#feedback2"
   match "/emailus", to: "pages#emailus"

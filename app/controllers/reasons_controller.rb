@@ -1,5 +1,7 @@
 class ReasonsController < ApplicationController
   def show
+    @reason = Reason.find_by_id(params[:id])
+    @topic = T.find_by_id(@reason.t_id)
   end
   
   def showquestion
@@ -33,7 +35,35 @@ class ReasonsController < ApplicationController
   end
   
   def create
-    temp = Reason.new(params[:reason])
-    @hash = params[:reason]
+    reason = Reason.new(params[:reason])
+    reason.score = 0
+    reason.save
+    redirect_to T.find_by_id(reason.t_id)
+  end
+  
+  def upvote
+    reason = Reason.find_by_id(params[:id])
+    reason.score = reason.score + 1
+    reason.save
+    redirect_to reason_path(reason)
+  end
+  
+  def downvote
+    reason = Reason.find_by_id(params[:id])
+    reason.score = reason.score - 1
+    reason.save
+    redirect_to reason_path(reason)
+  end
+  
+  def edit
+    @reason = Reason.find_by_id(params[:id])
+    @topic = T.find_by_id(@reason.t_id)
+  end
+  
+  def update
+    @reason = Reason.find_by_id(params[:id])
+    @reason.update_attributes(params[:reason])
+    @topic = T.find_by_id(@reason.t_id)
+    redirect_to @topic
   end
 end
