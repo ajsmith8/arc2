@@ -2,7 +2,6 @@ class TsController < ApplicationController
   def index
     @title = "All Topics"
     @topics = T.all
-    
     @topics.sort! { |b,a| a.score <=> b.score}
   end
   
@@ -118,5 +117,11 @@ class TsController < ApplicationController
    
    def description
      @topic = T.find_by_url(params[:id])
+   end
+   
+   def destroy
+     topic = T.find_by_url(params[:id])
+     topic.destroy
+     redirect_to ts_path
    end
 end

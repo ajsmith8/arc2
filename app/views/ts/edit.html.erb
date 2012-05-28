@@ -37,16 +37,19 @@
 	</div>
 <% end %>
 
-<div data-theme="a">
-<%= form_for(@category_relationship) do |f| %>
-	<%= hidden_field_tag "category_relationship[category_ids][]", nil %>
-	<%= f.hidden_field :t_id, value: @topic.id %>
-	<% Category.all.each do |category| %>
-		<%= check_box_tag "category_relationship[category_ids][]", category.id, @ids.include?(category.id), id: dom_id(category), "data-theme"=>"e"%>
-		<%= label_tag dom_id(category), category.name %>
-	<% end %>
-	<%= f.submit "Submit" %>
-<% end %>
+<div data-role = "collapsible">
+	<h2>Edit Categories</h2>
+	<div data-theme="a">
+	<%= form_for(@category_relationship) do |f| %>
+		<%= hidden_field_tag "category_relationship[category_ids][]", nil %>
+		<%= f.hidden_field :t_id, value: @topic.id %>
+		<% Category.all.each do |category| %>
+			<%= check_box_tag "category_relationship[category_ids][]", category.id, @ids.include?(category.id), id: dom_id(category), "data-theme"=>"e"%>
+			<%= label_tag dom_id(category), category.name %>
+			<% end %>
+			<%= f.submit "Change Categories" %>
+		<% end %>
+	</div>
 </div>
 <div class="ui-grid-b">
 	<div class="ui-block-a"></div>

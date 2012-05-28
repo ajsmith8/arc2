@@ -23,7 +23,7 @@ Arc2::Application.routes.draw do
     end
   end
   
-  match "/admin", to: "ts#index"
+  match "/admin", to: "sessions#destroy"
   match "/thanks", to: "pages#thanks"
   match "/feedback2", to: "pages#feedback2"
   match "/emailus", to: "pages#emailus"
