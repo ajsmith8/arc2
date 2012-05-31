@@ -1,30 +1,73 @@
 <div data-role = "page" id = "reason">
-	<%= @hash %></br>
-	<%= @reason  %></br>
-	<%= @counter  %> of 4
-	<div>
-	<a href = "#quizquestion" data-role = "button">Got It</a>
+	<div data-role = "header" data-position = "fixed">
+		<div class = "ui-grid-b" style = "padding: 0.5em 0 0.5em 0">
+			<div class = "ui-block-a"></div>
+			<div class = "ui-block-b" style = "text-align: center">fuseGap</div>
+			<div class = "ui-block-c" style = "text-align: right"><%= @counter + 4 %> / 8</div>
+		</div>
 	</div>
-	<div>
-	<a href = "#reasoninfo" data-role = "button">More Info</a>
+	
+	<div class = "content">
+		<p style = "text-align: center; font-size: 1.1em; line-height: 135%; margin: 1em"><%= @reason.title %></p>
+	</div>
+	
+	<div class = "ui-grid-b">
+		<div class = "ui-block-a"></div>
+		<div class = "ui-block-b">
+			<div>
+				<a href = "#quizquestion" data-role = "button" style = "margin: 0 -5em 1em -5em" data-theme = "b" data-icon = "check">Got It</a>
+			</div>
+			<div>
+				<a href = "#reasoninfo" data-role = "button" style = "margin: 0 -5em 1em -5em" data-theme = "c" data-icon = "info">More Info</a>
+			</div>
+		</div>
+	</div>
+	
+	<div data-role = "footer" data-position = "fixed">
+		<h1>fuseGap</h1>
 	</div>
 </div>
 
 <div data-role = "page" id = "reasoninfo">
-	<%= @reason.description %></br>
-	<%= @reason.t_id %>
-	<div>
-	<a href = "#quizquestion" data-role = "button">Got It</a>
+	<div data-role = "header" data-position = "fixed">
+		<div class = "ui-grid-b" style = "padding: 0.5em 0 0.5em 0">
+			<div class = "ui-block-a"></div>
+			<div class = "ui-block-b" style = "text-align: center">fuseGap</div>
+			<div class = "ui-block-c" style = "text-align: right"><%= @counter + 4 %> / 8</div>
+		</div>
 	</div>
-	<div>
-	<a href = "#dispute" data-role = "button">Dispute Source</a>
+	
+	<div class = "content" style = "margin: 0 0.5em 0 0.5em">
+		<p><%= simple_format(auto_link(@reason.description)) %></p>
+	</div>
+	
+	<div class = "ui-grid-b">
+		<div class = "ui-block-a"></div>
+		<div class = "ui-block-b">
+			<div>
+				<a href = "#quizquestion" data-role = "button" style = "margin: 0 -5em 1em -5em" data-theme = "b" data-icon = "check">Got It</a>
+			</div>
+			<div>
+				<a href = "#dispute" data-role = "button" style = "margin: 0 -5em 1em -5em" data-theme = "c" data-icon = "alert">Dispute Source</a>
+			</div>
+		</div>
+	</div>
+	
+	<div data-role = "footer" data-position = "fixed">
+		<h1>fuseGap</h1>
 	</div>
 </div>
 
 <div data-role = "page" id = "quizquestion">
-	<div data-role="header" data-theme="c" style="white-space: normal; min-height: 1em;
-		padding: 0.3em 0.3em 0.3em 0.3em">	
-		<p style="margin:0; text-align: center; line-height:135%; font-size: 0.9em;"> <%=@reason.question%></p>
+	<div data-role = "header" data-position = "fixed">
+		<div class = "ui-grid-b" style = "padding: 0.5em 0 0.5em 0">
+			<div class = "ui-block-a"></div>
+			<div class = "ui-block-b" style = "text-align: center">fuseGap</div>
+			<div class = "ui-block-c" style = "text-align: right"><%= @counter + 4 %> / 8</div>
+		</div>
+	</div>
+	<div class = "content">
+		<p style = "text-align: center; font-size: 1.1em; line-height: 135%; margin: 1em"><%= @reason.question %></p>
 	</div>
 	
 	<% i = 0 %>
@@ -70,9 +113,20 @@
 		<% i += 1%>
   <% end %>	
 	
+	<div data-role = "footer" data-position = "fixed">
+		<h1>fuseGap</h1>
+	</div>
 </div>
 
 <div data-role="page" id="correct">
+	<div data-role = "header" data-position = "fixed">
+		<div class = "ui-grid-b" style = "padding: 0.5em 0 0.5em 0">
+			<div class = "ui-block-a"></div>
+			<div class = "ui-block-b" style = "text-align: center">fuseGap</div>
+			<div class = "ui-block-c" style = "text-align: right"><%= @counter + 4 %> / 8</div>
+		</div>
+	</div>
+	
 	<div style="white-space: normal; min-height: 1em; padding: 0.4em; margin: 0 0 1.2em 0;">
 		<div class="ui-grid-b">
 			<div class="ui-block-a">	
@@ -91,7 +145,7 @@
 	
 	<div data-role="header" data-theme="c" style="white-space: normal; min-height: 1em;
 		padding: 0.4em 0.3em 0.4em 0.3em">	
-		<p style="margin:0; text-align: center; line-height:135%;"><%= @reason.title %></p>
+		<p style="text-align: center"><%= @reason.title %></p>
 	</div>
 
 	<div style="height: 0.5em;"></div>
@@ -115,9 +169,21 @@
 			<% end %>
 		<% end %>
 	</div>
+	
+	<div data-role = "footer" data-position = "fixed">
+		<h1>fuseGap</h1>
+	</div>
 </div>
 
 <div data-role="page" id="wrong">
+	<div data-role = "header" data-position = "fixed">
+		<div class = "ui-grid-b" style = "padding: 0.5em 0 0.5em 0">
+			<div class = "ui-block-a"></div>
+			<div class = "ui-block-b" style = "text-align: center">fuseGap</div>
+			<div class = "ui-block-c" style = "text-align: right"><%= @counter + 4 %> / 8</div>
+		</div>
+	</div>
+	
 	<div style="white-space: normal; min-height: 1em; padding: 0.4em; margin: 0 0 1.2em 0;">
 		<div class="ui-grid-b">
 			<div class="ui-block-a">	
@@ -165,12 +231,32 @@
 				<%= f.submit "Next" %>
 			<% end %>
 		<% end %>
+	</div>
+	
+	<div data-role = "footer" data-position = "fixed">
+		<h1>fuseGap</h1>
 	</div>		 
 </div>
 
 <div data-role = "page" id = "dispute">
-	Under construction, sorry!
-	<div>
-	<a href = "#" data-role = "button", data-rel ="back">Back</a>
+	<div data-role = "header" data-position = "fixed">
+		<h1>fuseGap</h1>
+	</div>
+	
+	<div class = "content">
+		<p style = "text-align: center">Under construction, sorry!</p>
+	</div>
+	
+	<div class = "ui-grid-b">
+		<div class = "ui-block-a"></div>
+		<div class = "ui-block-b">
+			<div>
+				<a href = "#" data-role = "button" data-rel ="back" style = "margin: 0 -5em 1em -5em" data-theme = "c" data-icon = "back">Back</a>
+			</div>
+		</div>
+	</div>
+	
+	<div data-role = "footer" data-position = "fixed">
+		<h1>fuseGap</h1>
 	</div>
 </div>

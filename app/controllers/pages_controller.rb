@@ -26,24 +26,30 @@ class PagesController < ApplicationController
   end
   
   def topic_choice
-    activityarray = TempActivity.where(user_id: current_user.id).first
+    @activityarray = TempActivity.where(user_id: current_user.id).first
     balls = CategoryRelationship.where(user_id: current_user.id) 
     if balls.empty?
       redirect_to categories_path
     end
+    initialtopics = Array.new
     @topicchoices = Array.new
-    x = 1
     balls.each do |i|
       topicarray=CategoryRelationship.where(user_id: nil, category_id: i.category_id)
       topicarray.each do |j|
-        if j.t_id != activityarray.t1_id
-          @topicchoices.push T.find_by_id(j.t_id)
-          x += 1
+        if j.t_id != @activityarray.t1_id
+          initialtopics.push T.find_by_id(j.t_id)
         end
-        break if x > 5
       end
-      break if x > 5
     end
+    x = 1
+    initialtopics.each do |a|
+      break if x > 5  
+      if !@topicchoices.include?(a)
+        @topicchoices.push a
+        x +=1
+      end
+    end
+    @topicchoices.sort! { |a,b| a.score <=> b.score }
   end
   
   def survey1
@@ -99,5 +105,7 @@ class PagesController < ApplicationController
   end
   
   def thanks
+    @emailed = true
+    redirect_to emailus_path
   end
 end

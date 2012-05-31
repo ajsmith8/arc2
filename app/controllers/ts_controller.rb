@@ -64,11 +64,27 @@ class TsController < ApplicationController
     if activityarray.t1_id.nil?
       activityarray.t1_id = @topic.id
       activityarray.save
-      redirect_to survey1_path
+      redirect_to tutorial1_t_path(@topic)
     else 
       activityarray.t2_id = @topic.id
       activityarray.save
-      redirect_to survey3_path
+      @topic = T.find_by_id(activityarray.t2_id)
+      pros = Reason.where(t_id: @topic.id, is_pro: true)
+      cons = Reason.where(t_id: @topic.id, is_pro: false)
+      pros.sort! { |b,a| a.score <=> b.score }
+      cons.sort! { |b,a| a.score <=> b.score }
+      if @topic.majority == "pro"
+        @reason1 = cons[0]
+        @reason2 = pros[0]
+        @reason3 = cons[1]
+        @reason4 = pros[1]
+      else
+        @reason1 = pros[0]
+        @reason2 = cons[0]
+        @reason3 = pros[1]
+        @reason4 = cons[1]
+      end
+      redirect_to showquestion_reason_path(@reason1)
     end
   end
   
@@ -78,16 +94,16 @@ class TsController < ApplicationController
     cons = Reason.where(t_id: @topic.id, is_pro: false)
     pros.sort! { |b,a| a.score <=> b.score }
     cons.sort! { |b,a| a.score <=> b.score }
-    if @topic.political == current_user.political_view
+    if @topic.majority == "pro"
       @reason1 = cons[0]
-      @reason2 = pros[1]
-      @reason3 = pros[0]
-      @reason4 = cons[1]
+      @reason2 = pros[0]
+      @reason3 = cons[1]
+      @reason4 = pros[1]
     else
       @reason1 = pros[0]
-      @reason2 = cons[1]
-      @reason3 = cons[0]
-      @reason4 = pros[1]
+      @reason2 = cons[0]
+      @reason3 = pros[1]
+      @reason4 = cons[1]
     end
   end
   

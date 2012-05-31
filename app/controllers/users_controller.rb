@@ -4,7 +4,7 @@ class UsersController < ApplicationController
     @user.save
     session[:user_id] = @user.id
     TempActivity.create(user_id: @user.id)
-    redirect_to political_choice_path
+    redirect_to categories_path
   end
   
   def update

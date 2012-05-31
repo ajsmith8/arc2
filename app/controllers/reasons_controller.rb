@@ -13,16 +13,16 @@ class ReasonsController < ApplicationController
       cons = Reason.where(t_id: @topic.id, is_pro: false)
       pros.sort! { |b,a| a.score <=> b.score }
       cons.sort! { |b,a| a.score <=> b.score }
-      if @topic.political == current_user.political_view
+      if @topic.majority == "pro"
         @reason1 = cons[0]
-        @reason2 = pros[1]
-        @reason3 = pros[0]
-        @reason4 = cons[1]
+        @reason2 = pros[0]
+        @reason3 = cons[1]
+        @reason4 = pros[1]
       else
         @reason1 = pros[0]
-        @reason2 = cons[1]
-        @reason3 = cons[0]
-        @reason4 = pros[1]
+        @reason2 = cons[0]
+        @reason3 = pros[1]
+        @reason4 = cons[1]
       end
     array = [@reason1, @reason2, @reason3, @reason4]
     @counter = 1

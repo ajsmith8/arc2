@@ -1,21 +1,44 @@
-What % of your friends know more about this topic than you now?
-
-<%=form_for @friend_question2, html:{"data-ajax"=>"false"} do |f| %>
-	<%= f.hidden_field :friend_question2, value: "0" %>
-	<%= f.submit "10%" %>
-<% end %>
+<div data-role = "page">
+	<div data-role = "header" data-position = "fixed">
+		<div class = "ui-grid-b" style = "padding: 0.5em 0 0.5em 0">
+			<div class = "ui-block-a"></div>
+			<div class = "ui-block-b" style = "text-align: center">fuseGap</div>
+			<div class = "ui-block-c" style = "text-align: right">4 / 8</div>
+		</div>
+	</div>
 	
-<%=form_for @friend_question2, html:{"data-ajax"=>"false"} do |f| %>
-	<%= f.hidden_field :friend_question2, value: "1" %>
-	<%= f.submit "25%" %>
-<% end %>
+	<div data-role = "content">
+		<p style = "text-align: center; font-size: 1.1em">Roughly how much did you just learn about this topic?</p>
+	</div>
+	
+	<div style = "margin: 0 0.5em 0 0.5em">
+		<%=form_for @friend_question2, html:{"data-ajax"=>"false"} do |f| %>
+			<%= f.hidden_field :friend_question2, value: "4" %>
+			<%= f.submit "A lot" %>
+		<% end %>
+	
+		<%=form_for @friend_question2, html:{"data-ajax"=>"false"} do |f| %>
+			<%= f.hidden_field :friend_question2, value: "3" %>
+			<%= f.submit "A decent amount" %>
+		<% end %>
 
-<%=form_for @friend_question2, html:{"data-ajax"=>"false"} do |f| %>
-	<%= f.hidden_field :friend_question2, value: "2" %>
-	<%= f.submit "50%" %>
-<% end %>
+		<%=form_for @friend_question2, html:{"data-ajax"=>"false"} do |f| %>
+			<%= f.hidden_field :friend_question2, value: "2" %>
+			<%= f.submit "A little" %>
+		<% end %>
 
-<%=form_for @friend_question2, html:{"data-ajax"=>"false"} do |f| %>
-	<%= f.hidden_field :friend_question2, value: "3" %>
-	<%= f.submit "90%" %>
-<% end %>
+		<%=form_for @friend_question2, html:{"data-ajax"=>"false"} do |f| %>
+			<%= f.hidden_field :friend_question2, value: "1" %>
+			<%= f.submit "I didn't learn anything" %>
+		<% end %>
+
+		<%=form_for @friend_question2, html:{"data-ajax"=>"false"} do |f| %>
+			<%= f.hidden_field :friend_question2, value: "0" %>
+			<%= f.submit "This made me dumber" %>
+		<% end %>
+	</div>
+	
+	<div data-role = "footer" data-position = "fixed">
+		<h1>fuseGap</h1>
+	</div>
+</div>

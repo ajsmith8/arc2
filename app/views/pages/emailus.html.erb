@@ -1,5 +1,41 @@
+<div data-role = "page">
+	<div data-role = "header" data-position = "fixed">
+		<h1>fuseGap</h1>
+	</div>
+	
+	<% if current_user.email != nil %>
+		<div data-role = "content" style = "text-align: center">
+			<p style = "font-weight: bold; color: #33cc33">Thank you for submitting your email!</p>
+		</div>
+	<% end%>
+	
+	<div data-role = "content">
+		<p> &#149; That's all! Thanks for trying out our (very brief) demo!</p> 
+		<p> &#149; In the full site:
+			<div style="margin: 0 0 0 2em">
+				<p> &#149; There are much more than two pros/two cons for each topic</p>
+				<p> &#149; All content will be user-generated and editable</p>
+				<p> &#149; ...and much more!</p>
+			</div>
+		</p>
+		<% if current_user.email == nil %>
+		<p> &#149; Please enter your email address if you would like to be notified of our next demo launch! </p>
+	</div>
+
 <%= form_for @user do |f| %>
-	<%= f.label :email %>
-	<%= f.text_field :email %>
-	<%= f.submit "Ok" %>
-	<% end %>
+	<div style="text-align: center">
+		<%= f.label "Email:" %>
+	</div>
+	<div style="padding: 0 0.5em 0 0.5em">
+		<%= f.text_field :email %>
+	</div>
+	<div style="padding: 0 5em 0 5em">	
+		<%= f.submit "Submit", "data-theme"=>"b" %>
+	<div>
+<% end %>
+<% end %>
+	
+	<div data-role = "footer" data-position = "fixed">
+		<h1>fuseGap</h1>
+	</div>
+</div>

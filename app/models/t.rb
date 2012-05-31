@@ -4,7 +4,7 @@ class T < ActiveRecord::Base
   
   acts_as_url :title, sync_url: true
   
-  attr_accessible :title, :description, :political
+  attr_accessible :title, :description, :majority
   
   def to_param
     url

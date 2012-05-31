@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120524160819) do
+ActiveRecord::Schema.define(:version => 20120529203140) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
@@ -70,9 +70,9 @@ ActiveRecord::Schema.define(:version => 20120524160819) do
     t.text     "description"
     t.string   "url"
     t.integer  "score"
-    t.string   "political"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+    t.string   "majority"
   end
 
   create_table "users", :force => true do |t|
@@ -80,11 +80,10 @@ ActiveRecord::Schema.define(:version => 20120524160819) do
     t.string   "uid"
     t.string   "name"
     t.string   "email"
-    t.datetime "created_at",                        :null => false
-    t.datetime "updated_at",                        :null => false
-    t.boolean  "is_admin",       :default => false
-    t.boolean  "is_temp",        :default => true
-    t.string   "political_view"
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
+    t.boolean  "is_admin",   :default => false
+    t.boolean  "is_temp",    :default => true
   end
 
 end

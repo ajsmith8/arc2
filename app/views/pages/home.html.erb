@@ -1,16 +1,27 @@
 <div data-role = "page">
 	<div data-role = "header" data-position = "fixed">
+		
+			<div class = "ui-grid-b" style = "padding: 0.5em 0 0.5em 0">
+				<div class = "ui-block-a"></div>
+				<div class = "ui-block-b" style = "text-align: center">fuseGap</div>
+				<div class = "ui-block-c" style = "text-align: right"></div>
+			</div>
+
+	</div>
+	<div data-role = "content" style = "text-align: center">
+		Welcome to fuseGap! The most efficient way to learn <span style = "font-weight: bold">both sides</span> of a debatable topic
+	</div>
+	
+		<div class = "ui-grid-b">
+			<div class = "ui-block-a"></div>
+			<div class = "ui-block-b">
+				<div style = "margin: 0 -5em 0 -5em">
+					<%= link_to("New User?", new_user_path, "data-role"=>"button", "data-theme"=>"b") %>
+					<%= link_to("Returning User", root_url, "data-role"=>"button", "data-theme"=>"c") %>
+				</div>
+			</div>
+		</div>	
+	<div data-role = "footer" data-position = "fixed">
 		<h1>fuseGap</h1>
-	</div>
-	<div data-role = "content">
-		Welcome to fuseGap! Home of the raging homosexuals!
-	</div>
-	<div data-role = "footer" data-position = "fixed" data-theme = "b">
-		<div data-role = "navbar">
-			<ul>
-			<li><%= link_to("New User?", new_user_path, "data-role"=>"button", "data-theme"=>"b") %></li>
-			<li><%= link_to("Returning User", root_url, "data-role"=>"button", "data-theme"=>"b") %></li>
-			</ul>
-		</div>
 	</div>
 </div>
