@@ -1,5 +1,5 @@
 <div data-role = "page">
-	<div data-role = "header" data-position = "fixed">
+	<div data-role = "header" data-position = "fixed" data-theme = "f">
 		<div class = "ui-grid-b" style = "padding: 0.5em 0 0.5em 0">
 			<div class = "ui-block-a"></div>
 			<div class = "ui-block-b" style = "text-align: center">fuseGap</div>
@@ -14,27 +14,27 @@
 	<div style = "margin: 0 0.5em 0 0.5em">
 		<%=form_for @friend_question2, html:{"data-ajax"=>"false"} do |f| %>
 			<%= f.hidden_field :friend_question2, value: "4" %>
-			<%= f.submit "A ton" %>
+			<%= f.submit "A ton", "data-theme"=>"k" %>
 		<% end %>
 	
 		<%=form_for @friend_question2, html:{"data-ajax"=>"false"} do |f| %>
 			<%= f.hidden_field :friend_question2, value: "3" %>
-			<%= f.submit "A good amount" %>
+			<%= f.submit "A good amount", "data-theme"=>"f" %>
 		<% end %>
 
 		<%=form_for @friend_question2, html:{"data-ajax"=>"false"} do |f| %>
 			<%= f.hidden_field :friend_question2, value: "2" %>
-			<%= f.submit "A little" %>
+			<%= f.submit "A little", "data-theme"=>"g" %>
 		<% end %>
 
 		<%=form_for @friend_question2, html:{"data-ajax"=>"false"} do |f| %>
 			<%= f.hidden_field :friend_question2, value: "1" %>
-			<%= f.submit "I didn't learn anything" %>
+			<%= f.submit "I didn't learn anything", "data-theme"=>"h" %>
 		<% end %>
 
 		<%=form_for @friend_question2, html:{"data-ajax"=>"false"} do |f| %>
 			<%= f.hidden_field :friend_question2, value: "0" %>
-			<%= f.submit "This made me dumber" %>
+			<%= f.submit "This made me dumber", "data-theme"=>"i" %>
 		<% end %>
 	</div>
 </div>

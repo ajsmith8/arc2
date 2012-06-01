@@ -32,6 +32,67 @@ class ReasonsController < ApplicationController
       end
       @counter += 1
     end
+    
+    @reason = Reason.find_by_id(params[:id])
+    @numquestions = Reason.where(t_id: @reason.t_id).count
+    @questionnumber = 1
+    @topic = T.find_by_id(@reason.t_id)
+    @correctindex = rand(4)
+    
+    wins = [
+     [ 1, 63, 72 ],
+     [ 2, 63, 69 ],
+     [ 3, 65, 65 ],
+     [ 4, 63, 86 ],
+     [ 5, 81, 45 ],
+     [ 6, 68, 79 ],
+     [ 7, 63, 61 ],
+     [ 8, 67, 86 ],
+     [ 9, 58, 58 ],
+     [ 10, 85, 77 ],
+     [ 11, 63, 83 ],
+     [ 12, 59, 59 ],
+     [ 13, 74, 59 ],
+     [ 14, 58, 58 ],
+     [ 15, 70, 70 ],
+     [ 16, 76, 56 ],
+     [ 17, 76, 63 ]]
+    
+    fails = [
+     [ 1, 68, 79 ],
+     [ 2, 67, 59 ],
+     [ 3, 63, 83 ],
+     [ 4, 63, 90 ],
+     [ 5, 60, 60 ],
+     [ 6, 70, 68 ],
+     [ 7, 68, 63 ],
+     [ 8, 65, 52 ],
+     [ 9, 59, 69 ],
+     [ 10, 61, 61 ],
+     [ 11, 72, 83 ],
+     [ 12, 68, 59 ],
+     [ 13, 65, 77 ],
+     [ 14, 63, 63 ],
+     [ 15, 61, 61 ],
+     [ 16, 65, 65 ],
+     [ 17, 58, 58 ],
+     [ 18, 56, 56 ],
+     [ 19, 56, 56 ],
+     [ 20, 63, 63 ],
+     [ 21, 58, 58 ],
+     [ 22, 65, 65 ],
+     [ 23, 58, 58 ],
+     [ 24, 61, 81 ]]
+    
+    winvar = 1 + rand(17)
+    failvar = 1 + rand(24)
+    @winpath = "/assets/win" + winvar.to_s() + ".png"
+    @winheight = wins[winvar-1][1]
+    @winwidth = wins[winvar-1][2]
+    
+    @failpath = "/assets/fail" + failvar.to_s() + ".png"
+    @failheight = fails[failvar-1][1]
+    @failwidth = fails[failvar-1][2]
   end
   
   def create

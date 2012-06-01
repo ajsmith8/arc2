@@ -1,5 +1,5 @@
 <div data-role = "page" id = "reason">
-	<div data-role = "header" data-position = "fixed">
+	<div data-role = "header" data-position = "fixed" data-theme = "f">
 		<div class = "ui-grid-b" style = "padding: 0.5em 0 0.5em 0">
 			<div class = "ui-block-a"></div>
 			<div class = "ui-block-b" style = "text-align: center">fuseGap</div>
@@ -15,21 +15,17 @@
 		<div class = "ui-block-a"></div>
 		<div class = "ui-block-b">
 			<div>
-				<a href = "#reasoninfo" data-role = "button" style = "margin: 0 -5em 1em -5em" data-theme = "b" data-icon = "info">More Info</a>
+				<a href = "#reasoninfo" data-role = "button" style = "margin: 0 -5em 1em -5em" data-theme = "k" data-icon = "info">Learn More</a>
 			</div>
 			<div>
-				<a href = "#quizquestion" data-role = "button" style = "margin: 0 -5em 1em -5em" data-theme = "c" data-icon = "check">Got It</a>
+				<a href = "#quizquestion" data-role = "button" style = "margin: 0 -5em 1em -5em" data-theme = "j" data-icon = "check">Quiz Me!</a>
 			</div>
 		</div>
-	</div>
-	
-	<div data-role = "footer" data-position = "fixed">
-		<h1>fuseGap</h1>
 	</div>
 </div>
 
 <div data-role = "page" id = "reasoninfo">
-	<div data-role = "header" data-position = "fixed">
+	<div data-role = "header" data-position = "fixed" data-theme = "f">
 		<div class = "ui-grid-b" style = "padding: 0.5em 0 0.5em 0">
 			<div class = "ui-block-a"></div>
 			<div class = "ui-block-b" style = "text-align: center">fuseGap</div>
@@ -45,17 +41,17 @@
 		<div class = "ui-block-a"></div>
 		<div class = "ui-block-b">
 			<div>
-				<a href = "#dispute" data-role = "button" style = "margin: 0 -5em 1em -5em" data-theme = "b" data-icon = "alert">Dispute Source</a>
+				<a href = "#dispute" data-role = "button" style = "margin: 0 -5em 1em -5em" data-theme = "f" data-icon = "alert">Dispute Source</a>
 			</div>
 			<div>
-				<a href = "#quizquestion" data-role = "button" style = "margin: 0 -5em 1em -5em" data-theme = "c" data-icon = "check">Got It</a>
+				<a href = "#quizquestion" data-role = "button" style = "margin: 0 -5em 1em -5em" data-theme = "j" data-icon = "check">Quiz Me!</a>
 			</div>
 		</div>
 	</div>
 </div>
 
 <div data-role = "page" id = "quizquestion">
-	<div data-role = "header" data-position = "fixed">
+	<div data-role = "header" data-position = "fixed" data-theme = "f">
 		<div class = "ui-grid-b" style = "padding: 0.5em 0 0.5em 0">
 			<div class = "ui-block-a"></div>
 			<div class = "ui-block-b" style = "text-align: center">fuseGap</div>
@@ -72,7 +68,7 @@
 	<% while i < 4 %>
 		<% if i == index %>
 			<div style="margin:0.65em 0 0.65em 0; font-size: 0.8em;">
-				<a href="#correct" data-role="button", data-icon="check"> 
+				<a href="#correct" data-role="button", data-icon="check" data-theme = "j"> 
 					<div style="white-space: normal; margin: 0 -1em 0 -0.8em;">
 						<%=@reason.correct_answer%> 
 					</div>
@@ -80,7 +76,7 @@
 			</div>
 		<% elsif j == 0 %>	
 			<div style="margin:0.65em 0 0.65em 0; font-size: 0.8em;">
-				<a href="#wrong" data-role="button", data-icon="check"> 
+				<a href="#wrong" data-role="button", data-icon="check" data-theme = "j"> 
 					<div style="white-space: normal; margin: 0 -1em 0 -0.8em;">
 						<%=@reason.wrong_answer1%> 
 					</div>
@@ -89,7 +85,7 @@
 			<% j += 1%>
 		<% elsif j == 1 && @reason.wrong_answer2 != "<blank>"%>
 			<div style="margin:0.65em 0 0.65em 0; font-size: 0.8em;">
-				<a href="#wrong" data-role="button", data-icon="check"> 
+				<a href="#wrong" data-role="button", data-icon="check" data-theme = "j"> 
 					<div style="white-space: normal; margin: 0 -1em 0 -0.8em;">
 						<%=@reason.wrong_answer2%> 
 					</div>
@@ -98,7 +94,7 @@
 			<% j += 1%>
 		<% elsif @reason.wrong_answer3 != "<blank>"%>
 			<div style="margin:0.65em 0 0.65em 0; font-size: 0.8em;">
-				<a href="#wrong" data-role="button", data-icon="check"> 
+				<a href="#wrong" data-role="button", data-icon="check" data-theme = "j"> 
 					<div style="white-space: normal; margin: 0 -1em 0 -0.8em;">
 						<%=@reason.wrong_answer3%> 
 					</div>
@@ -108,14 +104,11 @@
 		<% end %>				
 		<% i += 1%>
   <% end %>	
-	
-	<div data-role = "footer" data-position = "fixed">
-		<h1>fuseGap</h1>
-	</div>
+
 </div>
 
 <div data-role="page" id="correct">
-	<div data-role = "header" data-position = "fixed">
+	<div data-role = "header" data-position = "fixed" data-theme = "f">
 		<div class = "ui-grid-b" style = "padding: 0.5em 0 0.5em 0">
 			<div class = "ui-block-a"></div>
 			<div class = "ui-block-b" style = "text-align: center">fuseGap</div>
@@ -129,8 +122,8 @@
 				<p style="margin: 1em 0 0 0; text-align: center; color: #33cc33; font-size: 1.15em; font-weight: bold;">
 					Correct!</p>
 			</div>
-			<div class = "ui-block-b">
-				
+			<div class = "ui-block-b" align = "center">
+				<img src=<%=@winpath%> width=<%=@winwidth%> height=<%=@winheight%>/>
 			</div>
 			<div class="ui-block-c">	
 				<p style="margin: 1em 0 0 0; text-align: center; color: #33cc33; font-size: 1.15em; font-weight: bold;">
@@ -149,30 +142,26 @@
 		<%=form_for @activity, html:{"data-ajax"=>"false"} do |f| %>
 			<% if @counter == 1 %>
 				<%= f.hidden_field :quiz1, value: true %>
-				<%= f.submit "Next" %>
+				<%= f.submit "Next", "data-theme"=>"j" %>
 			<% end %>
 			<% if @counter == 2 %>
 				<%= f.hidden_field :quiz2, value: true %>
-				<%= f.submit "Next" %>
+				<%= f.submit "Next", "data-theme"=>"j" %>
 			<% end %>
 			<% if @counter == 3 %>
 				<%= f.hidden_field :quiz3, value: true %>
-				<%= f.submit "Next" %>
+				<%= f.submit "Next", "data-theme"=>"j" %>
 			<% end %>
 			<% if @counter == 4 %>
 				<%= f.hidden_field :quiz4, value: true %>
-				<%= f.submit "Next" %>
+				<%= f.submit "Next", "data-theme"=>"j" %>
 			<% end %>
 		<% end %>
-	</div>
-	
-	<div data-role = "footer" data-position = "fixed">
-		<h1>fuseGap</h1>
 	</div>
 </div>
 
 <div data-role="page" id="wrong">
-	<div data-role = "header" data-position = "fixed">
+	<div data-role = "header" data-position = "fixed" data-theme = "f">
 		<div class = "ui-grid-b" style = "padding: 0.5em 0 0.5em 0">
 			<div class = "ui-block-a"></div>
 			<div class = "ui-block-b" style = "text-align: center">fuseGap</div>
@@ -186,8 +175,8 @@
 				<p style="margin: 1em 0 0 0; text-align: center; color: #ff0000; font-size: 1.15em; font-weight: bold;">
 					Wrong!</p>
 			</div>
-			<div class="ui-block-b">
-			
+			<div class="ui-block-b" align = "center">
+				<img src=<%=@failpath%> width=<%=@failwidth%> height=<%=@failheight%>/>
 			</div>
 			<div class="ui-block-c">	
 				<p style="margin: 1em 0 0 0; text-align: center; color: #ff0000; font-size: 1.15em; font-weight: bold;">
@@ -196,7 +185,7 @@
 		</div>	
 	</div>
 	
-	<div data-role="header" data-theme="a" style="white-space: normal; min-height: 1em;
+	<div data-role="header" data-theme="f" style="white-space: normal; min-height: 1em;
 		padding: 0.4em 0.3em 0.4em 0.3em">	
 		<p style="margin:0; text-align: center; line-height:135%;">Correct Answer: <%=@reason.correct_answer%></p>
 	</div>
@@ -212,30 +201,26 @@
 		<%=form_for @activity, html:{"data-ajax"=>"false"} do |f| %>
 			<% if @counter == 1 %>
 				<%= f.hidden_field :quiz1, value: false %>
-				<%= f.submit "Next" %>
+				<%= f.submit "Next", "data-theme"=>"j" %>
 			<% end %>
 			<% if @counter == 2 %>
 				<%= f.hidden_field :quiz2, value: false %>
-				<%= f.submit "Next" %>
+				<%= f.submit "Next", "data-theme"=>"j" %>
 			<% end %>
 			<% if @counter == 3 %>
 				<%= f.hidden_field :quiz3, value: false %>
-				<%= f.submit "Next" %>
+				<%= f.submit "Next", "data-theme"=>"j" %>
 			<% end %>
 			<% if @counter == 4 %>
 				<%= f.hidden_field :quiz4, value: false %>
-				<%= f.submit "Next" %>
+				<%= f.submit "Next", "data-theme"=>"j" %>
 			<% end %>
 		<% end %>
-	</div>
-	
-	<div data-role = "footer" data-position = "fixed">
-		<h1>fuseGap</h1>
 	</div>		 
 </div>
 
 <div data-role = "page" id = "dispute">
-	<div data-role = "header" data-position = "fixed">
+	<div data-role = "header" data-position = "fixed" data-theme = "f">
 		<h1>fuseGap</h1>
 	</div>
 	
@@ -247,7 +232,7 @@
 		<div class = "ui-block-a"></div>
 		<div class = "ui-block-b">
 			<div>
-				<a href = "#" data-role = "button" data-rel ="back" style = "margin: 0 -5em 1em -5em" data-theme = "c" data-icon = "back">Back</a>
+				<a href = "#" data-role = "button" data-rel ="back" style = "margin: 0 -5em 1em -5em" data-theme = "f" data-icon = "back">Back</a>
 			</div>
 		</div>
 	</div>

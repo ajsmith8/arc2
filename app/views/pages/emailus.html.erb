@@ -1,5 +1,5 @@
 <div data-role = "page">
-	<div data-role = "header" data-position = "fixed">
+	<div data-role = "header" data-position = "fixed" data-theme = "f">
 		<h1>fuseGap</h1>
 	</div>
 	
@@ -22,20 +22,16 @@
 		<p> &#149; Please enter your email address if you would like to be notified of our next demo launch! </p>
 	</div>
 
-<%= form_for @user do |f| %>
-	<div style="text-align: center">
-		<%= f.label "Email:" %>
-	</div>
-	<div style="padding: 0 0.5em 0 0.5em">
-		<%= f.text_field :email %>
-	</div>
-	<div style="padding: 0 5em 0 5em">	
-		<%= f.submit "Submit", "data-theme"=>"b" %>
-	<div>
-<% end %>
-<% end %>
-	
-	<div data-role = "footer" data-position = "fixed">
-		<h1>fuseGap</h1>
-	</div>
+		<%= form_for @user do |f| %>
+			<div style="text-align: center">
+				<%= f.label "Email:" %>
+			</div>
+			<div style="padding: 0 0.5em 0 0.5em">
+				<%= f.text_field :email %>
+			</div>
+			<div style="padding: 0 5em 0 5em">	
+				<%= f.submit "Submit", "data-theme"=>"k" %>
+			<div>
+		<% end %>
+	<% end %>
 </div>
