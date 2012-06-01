@@ -11,16 +11,16 @@
 		</div>
 		
 		<div data-role = "content">
-			<p style = "text-align: center; font-size: 1.0em"><b>You've clicked through a topic, but can you also pass a quiz?</br></br>Pick another topic and find out!</b></p>
+			<p style = "text-align: center; font-size: 1.0em">You've clicked through a topic, but can you also <b>pass a quiz?</br></br>Pick another topic and find out!</b></p>
 		</div>
 			<ul data-role = "listview">
 				<% blue = true %>
 				<% @topicchoices.each do |i|%>
 					<% if blue %>
-						<li><%= link_to(T.find_by_id(i.id).title, choose_t_path(T.find_by_id(i.id)), "data-theme"=>"", "data-ajax"=>"false", "style"=>"white-space: normal; line-height:135%; font-size: 0.9em; padding: 0.5em 2.2em 0.5em 0.5em;") %></li>
+						<li><%= link_to(T.find_by_id(i.id).title, topicdescription_t_path(T.find_by_id(i.id)), "data-theme"=>"", "data-ajax"=>"false", "style"=>"white-space: normal; line-height:135%; font-size: 0.9em; padding: 0.5em 2.2em 0.5em 0.5em;") %></li>
 						<% blue = false %>
 					<% else %>
-						<li><%= link_to(T.find_by_id(i.id).title, choose_t_path(T.find_by_id(i.id)), "data-theme"=>"", "data-ajax"=>"false", "style"=>"white-space: normal; line-height:135%; font-size: 0.9em; padding: 0.5em 2.2em 0.5em 0.5em; color:#00007d;") %></li>
+						<li><%= link_to(T.find_by_id(i.id).title, topicdescription_t_path(T.find_by_id(i.id)), "data-theme"=>"", "data-ajax"=>"false", "style"=>"white-space: normal; line-height:135%; font-size: 0.9em; padding: 0.5em 2.2em 0.5em 0.5em; color:#00007d;") %></li>
 						<% blue = true %>
 					<% end %>
 				<% end %>
@@ -37,10 +37,10 @@
 			<% blue = true %>
 			<% @topicchoices.each do |i|%>
 				<% if blue %>
-					<li><%= link_to(T.find_by_id(i.id).title, choose_t_path(T.find_by_id(i.id)), "data-theme"=>"", "data-ajax"=>"false", "style"=>"white-space: normal; line-height:135%; font-size: 0.9em; padding: 0.5em 2.2em 0.5em 0.5em;") %></li>
+					<li><%= link_to(T.find_by_id(i.id).title, topicdescription_t_path(T.find_by_id(i.id)), "data-theme"=>"", "data-ajax"=>"false", "style"=>"white-space: normal; line-height:135%; font-size: 0.9em; padding: 0.5em 2.2em 0.5em 0.5em;") %></li>
 					<% blue = false %>
 				<% else %>
-					<li><%= link_to(T.find_by_id(i.id).title, choose_t_path(T.find_by_id(i.id)), "data-theme"=>"", "data-ajax"=>"false", "style"=>"white-space: normal; line-height:135%; font-size: 0.9em; padding: 0.5em 2.2em 0.5em 0.5em; color:#00007d;") %></li>
+					<li><%= link_to(T.find_by_id(i.id).title, topicdescription_t_path(T.find_by_id(i.id)), "data-theme"=>"", "data-ajax"=>"false", "style"=>"white-space: normal; line-height:135%; font-size: 0.9em; padding: 0.5em 2.2em 0.5em 0.5em; color:#00007d;") %></li>
 					<% blue = true %>
 				<% end %>
 			<% end %>

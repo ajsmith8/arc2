@@ -140,4 +140,14 @@ class TsController < ApplicationController
      topic.destroy
      redirect_to ts_path
    end
+   
+   def topicdescription
+     @topic = T.find_by_url(params[:id])
+     activity = TempActivity.where(user_id: current_user.id).last
+     if activity.t1_id == nil
+       @partB = false
+     else
+       @partB = true
+     end
+   end
 end

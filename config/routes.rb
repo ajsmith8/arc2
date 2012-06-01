@@ -8,12 +8,13 @@ Arc2::Application.routes.draw do
   resources :categories
   resources :sessions
   resources :users
-  resources :pages
   resources :temp_activities
+  
+  resources :pages 
   
   resources :ts do
     member do 
-      get :choose, :tutorial1, :tutorial2, :votepros, :votecons, :description
+      get :choose, :tutorial1, :tutorial2, :votepros, :votecons, :description, :topicdescription
     end
   end
   
