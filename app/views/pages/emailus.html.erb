@@ -9,17 +9,17 @@
 		</div>
 	<% end%>
 	
-	<div data-role = "content">
-		<p> &#149; That's all! Thanks for trying out our (very brief) demo!</p> 
-		<p> &#149; In the full site:
+	<div data-role = "content", style="margin: -1em 0 0 0">
+		<p> &#149; <b>That's all!</b> Thanks for trying out our (very brief) demo!</p> 
+		<p> &#149; In the <b>full</b> site:
 			<div style="margin: 0 0 0 2em">
-				<p> &#149; There are much more than two pros/two cons for each topic</p>
-				<p> &#149; All content will be user-generated and editable</p>
-				<p> &#149; ...and much more!</p>
+				<p style="margin: 0 0 0 0"> &#149; There are much <b>more than two pros/two cons</b> for each topic</p>
+				<p style="margin: 0.2em 0 0 0"> &#149; All content will be <b>user-generated</b> and <b>editable</b></p>
+				<p style="margin: 0.2em 0 0 0"> &#149; ...and much more!</p>
 			</div>
 		</p>
 		<% if current_user.email == nil %>
-		<p> &#149; Please enter your email address if you would like to be notified of our next demo launch! </p>
+		<p style="margin: 0.5em 0 0 0"> &#149; Please enter your <b>email</b> address if you would like to be notified of our next <b>demo launch!</b> </p>
 	</div>
 
 		<%= form_for @user do |f| %>

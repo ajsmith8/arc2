@@ -49,7 +49,7 @@ class PagesController < ApplicationController
         x +=1
       end
     end
-    @topicchoices.sort! { |a,b| a.score <=> b.score }
+    @topicchoices.sort! { |b,a| a.score <=> b.score }
   end
   
   def survey1
