@@ -42,6 +42,7 @@ class PagesController < ApplicationController
       end
     end
     x = 1
+    initialtopics.sort! { |b,a| a.score <=> b.score }
     initialtopics.each do |a|
       break if x > 5  
       if !@topicchoices.include?(a)
