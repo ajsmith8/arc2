@@ -30,19 +30,19 @@
 				<%=form_for @activity, html:{"data-ajax"=>"false"} do |f| %>
 					<% if @counter == 1 %>
 						<%= f.hidden_field :quiz1, value: true %>
-						<%= f.submit @reason.correct_answer, "data-theme"=>"j", "data-icon"=>"check" %>
+						<%= f.submit @reason.correct_answer, "data-theme"=>"j", "data-icon"=>"check", "style"=>"white-space: normal" %>
 					<% end %>
 					<% if @counter == 2 %>
 						<%= f.hidden_field :quiz2, value: true %>
-						<%= f.submit @reason.correct_answer, "data-theme"=>"j", "data-icon"=>"check" %>
+						<%= f.submit @reason.correct_answer, "data-theme"=>"j", "data-icon"=>"check", "style"=>"white-space: normal" %>
 					<% end %>
 					<% if @counter == 3 %>
 						<%= f.hidden_field :quiz3, value: true %>
-						<%= f.submit @reason.correct_answer, "data-theme"=>"j", "data-icon"=>"check" %>
+						<%= f.submit @reason.correct_answer, "data-theme"=>"j", "data-icon"=>"check", "style"=>"white-space: normal" %>
 					<% end %>
 					<% if @counter == 4 %>
 						<%= f.hidden_field :quiz4, value: true %>
-						<%= f.submit @reason.correct_answer, "data-theme"=>"j", "data-icon"=>"check" %>
+						<%= f.submit @reason.correct_answer, "data-theme"=>"j", "data-icon"=>"check", "style"=>"white-space: normal" %>
 					<% end %>
 				<% end %>	
 			</div>
@@ -51,19 +51,19 @@
 				<%=form_for @activity, html:{"data-ajax"=>"false"} do |f| %>
 					<% if @counter == 1 %>
 						<%= f.hidden_field :quiz1, value: false %>
-						<%= f.submit @reason.wrong_answer1, "data-theme"=>"j", "data-icon"=>"check" %>
+						<%= f.submit @reason.wrong_answer1, "data-theme"=>"j", "data-icon"=>"check", "style"=>"white-space: normal" %>
 					<% end %>
 					<% if @counter == 2 %>
 						<%= f.hidden_field :quiz2, value: false %>
-						<%= f.submit @reason.wrong_answer1, "data-theme"=>"j", "data-icon"=>"check" %>
+						<%= f.submit @reason.wrong_answer1, "data-theme"=>"j", "data-icon"=>"check", "style"=>"white-space: normal" %>
 					<% end %>
 					<% if @counter == 3 %>
 						<%= f.hidden_field :quiz3, value: false %>
-						<%= f.submit @reason.wrong_answer1, "data-theme"=>"j", "data-icon"=>"check" %>
+						<%= f.submit @reason.wrong_answer1, "data-theme"=>"j", "data-icon"=>"check", "style"=>"white-space: normal" %>
 					<% end %>
 					<% if @counter == 4 %>
 						<%= f.hidden_field :quiz4, value: false %>
-						<%= f.submit @reason.wrong_answer1, "data-theme"=>"j", "data-icon"=>"check" %>
+						<%= f.submit @reason.wrong_answer1, "data-theme"=>"j", "data-icon"=>"check", "style"=>"white-space: normal" %>
 					<% end %>
 				<% end %>	
 			</div>
@@ -73,19 +73,19 @@
 				<%=form_for @activity, html:{"data-ajax"=>"false"} do |f| %>
 					<% if @counter == 1 %>
 						<%= f.hidden_field :quiz1, value: false %>
-						<%= f.submit @reason.wrong_answer2, "data-theme"=>"j", "data-icon"=>"check" %>
+						<%= f.submit @reason.wrong_answer2, "data-theme"=>"j", "data-icon"=>"check", "style"=>"white-space: normal" %>
 					<% end %>
 					<% if @counter == 2 %>
 						<%= f.hidden_field :quiz2, value: false %>
-						<%= f.submit @reason.wrong_answer2, "data-theme"=>"j", "data-icon"=>"check" %>
+						<%= f.submit @reason.wrong_answer2, "data-theme"=>"j", "data-icon"=>"check", "style"=>"white-space: normal" %>
 					<% end %>
 					<% if @counter == 3 %>
 						<%= f.hidden_field :quiz3, value: false %>
-						<%= f.submit @reason.wrong_answer2, "data-theme"=>"j", "data-icon"=>"check" %>
+						<%= f.submit @reason.wrong_answer2, "data-theme"=>"j", "data-icon"=>"check", "style"=>"white-space: normal" %>
 					<% end %>
 					<% if @counter == 4 %>
 						<%= f.hidden_field :quiz4, value: false %>
-						<%= f.submit @reason.wrong_answer2, "data-theme"=>"j", "data-icon"=>"check" %>
+						<%= f.submit @reason.wrong_answer2, "data-theme"=>"j", "data-icon"=>"check", "style"=>"white-space: normal" %>
 					<% end %>
 				<% end %>
 			</div>
@@ -95,19 +95,19 @@
 				<%=form_for @activity, html:{"data-ajax"=>"false"} do |f| %>
 					<% if @counter == 1 %>
 						<%= f.hidden_field :quiz1, value: false %>
-						<%= f.submit @reason.wrong_answer3, "data-theme"=>"j", "data-icon"=>"check" %>
+						<%= f.submit @reason.wrong_answer3, "data-theme"=>"j", "data-icon"=>"check", "style"=>"white-space: normal" %>
 					<% end %>
 					<% if @counter == 2 %>
 						<%= f.hidden_field :quiz2, value: false %>
-						<%= f.submit @reason.wrong_answer3, "data-theme"=>"j", "data-icon"=>"check" %>
+						<%= f.submit @reason.wrong_answer3, "data-theme"=>"j", "data-icon"=>"check", "style"=>"white-space: normal" %>
 					<% end %>
 					<% if @counter == 3 %>
 						<%= f.hidden_field :quiz3, value: false %>
-						<%= f.submit @reason.wrong_answer3, "data-theme"=>"j", "data-icon"=>"check" %>
+						<%= f.submit @reason.wrong_answer3, "data-theme"=>"j", "data-icon"=>"check", "style"=>"white-space: normal" %>
 					<% end %>
 					<% if @counter == 4 %>
 						<%= f.hidden_field :quiz4, value: false %>
-						<%= f.submit @reason.wrong_answer3, "data-theme"=>"j", "data-icon"=>"check" %>
+						<%= f.submit @reason.wrong_answer3, "data-theme"=>"j", "data-icon"=>"check", "style"=>"white-space: normal" %>
 					<% end %>
 				<% end %>	
 			</div>
@@ -141,19 +141,19 @@
 				<%=form_for @activity, html:{"data-ajax"=>"false"} do |f| %>
 					<% if @counter == 1 %>
 						<%= f.hidden_field :quiz1, value: true %>
-						<%= f.submit @reason.correct_answer, "data-theme"=>"j", "data-icon"=>"check" %>
+						<%= f.submit @reason.correct_answer, "data-theme"=>"j", "data-icon"=>"check", "style"=>"white-space: normal" %>
 					<% end %>
 					<% if @counter == 2 %>
 						<%= f.hidden_field :quiz2, value: true %>
-						<%= f.submit @reason.correct_answer, "data-theme"=>"j", "data-icon"=>"check" %>
+						<%= f.submit @reason.correct_answer, "data-theme"=>"j", "data-icon"=>"check", "style"=>"white-space: normal" %>
 					<% end %>
 					<% if @counter == 3 %>
 						<%= f.hidden_field :quiz3, value: true %>
-						<%= f.submit @reason.correct_answer, "data-theme"=>"j", "data-icon"=>"check" %>
+						<%= f.submit @reason.correct_answer, "data-theme"=>"j", "data-icon"=>"check", "style"=>"white-space: normal" %>
 					<% end %>
 					<% if @counter == 4 %>
 						<%= f.hidden_field :quiz4, value: true %>
-						<%= f.submit @reason.correct_answer, "data-theme"=>"j", "data-icon"=>"check" %>
+						<%= f.submit @reason.correct_answer, "data-theme"=>"j", "data-icon"=>"check", "style"=>"white-space: normal" %>
 					<% end %>
 				<% end %>	
 			</div>
@@ -162,19 +162,19 @@
 				<%=form_for @activity, html:{"data-ajax"=>"false"} do |f| %>
 					<% if @counter == 1 %>
 						<%= f.hidden_field :quiz1, value: false %>
-						<%= f.submit @reason.wrong_answer1, "data-theme"=>"j", "data-icon"=>"check" %>
+						<%= f.submit @reason.wrong_answer1, "data-theme"=>"j", "data-icon"=>"check", "style"=>"white-space: normal" %>
 					<% end %>
 					<% if @counter == 2 %>
 						<%= f.hidden_field :quiz2, value: false %>
-						<%= f.submit @reason.wrong_answer1, "data-theme"=>"j", "data-icon"=>"check" %>
+						<%= f.submit @reason.wrong_answer1, "data-theme"=>"j", "data-icon"=>"check", "style"=>"white-space: normal" %>
 					<% end %>
 					<% if @counter == 3 %>
 						<%= f.hidden_field :quiz3, value: false %>
-						<%= f.submit @reason.wrong_answer1, "data-theme"=>"j", "data-icon"=>"check" %>
+						<%= f.submit @reason.wrong_answer1, "data-theme"=>"j", "data-icon"=>"check", "style"=>"white-space: normal" %>
 					<% end %>
 					<% if @counter == 4 %>
 						<%= f.hidden_field :quiz4, value: false %>
-						<%= f.submit @reason.wrong_answer1, "data-theme"=>"j", "data-icon"=>"check" %>
+						<%= f.submit @reason.wrong_answer1, "data-theme"=>"j", "data-icon"=>"check", "style"=>"white-space: normal" %>
 					<% end %>
 				<% end %>	
 			</div>
@@ -184,19 +184,19 @@
 				<%=form_for @activity, html:{"data-ajax"=>"false"} do |f| %>
 					<% if @counter == 1 %>
 						<%= f.hidden_field :quiz1, value: false %>
-						<%= f.submit @reason.wrong_answer2, "data-theme"=>"j", "data-icon"=>"check" %>
+						<%= f.submit @reason.wrong_answer2, "data-theme"=>"j", "data-icon"=>"check", "style"=>"white-space: normal" %>
 					<% end %>
 					<% if @counter == 2 %>
 						<%= f.hidden_field :quiz2, value: false %>
-						<%= f.submit @reason.wrong_answer2, "data-theme"=>"j", "data-icon"=>"check" %>
+						<%= f.submit @reason.wrong_answer2, "data-theme"=>"j", "data-icon"=>"check", "style"=>"white-space: normal" %>
 					<% end %>
 					<% if @counter == 3 %>
 						<%= f.hidden_field :quiz3, value: false %>
-						<%= f.submit @reason.wrong_answer2, "data-theme"=>"j", "data-icon"=>"check" %>
+						<%= f.submit @reason.wrong_answer2, "data-theme"=>"j", "data-icon"=>"check", "style"=>"white-space: normal" %>
 					<% end %>
 					<% if @counter == 4 %>
 						<%= f.hidden_field :quiz4, value: false %>
-						<%= f.submit @reason.wrong_answer2, "data-theme"=>"j", "data-icon"=>"check" %>
+						<%= f.submit @reason.wrong_answer2, "data-theme"=>"j", "data-icon"=>"check", "style"=>"white-space: normal" %>
 					<% end %>
 				<% end %>
 			</div>
@@ -206,19 +206,19 @@
 				<%=form_for @activity, html:{"data-ajax"=>"false"} do |f| %>
 					<% if @counter == 1 %>
 						<%= f.hidden_field :quiz1, value: false %>
-						<%= f.submit @reason.wrong_answer3, "data-theme"=>"j", "data-icon"=>"check" %>
+						<%= f.submit @reason.wrong_answer3, "data-theme"=>"j", "data-icon"=>"check", "style"=>"white-space: normal" %>
 					<% end %>
 					<% if @counter == 2 %>
 						<%= f.hidden_field :quiz2, value: false %>
-						<%= f.submit @reason.wrong_answer3, "data-theme"=>"j", "data-icon"=>"check" %>
+						<%= f.submit @reason.wrong_answer3, "data-theme"=>"j", "data-icon"=>"check", "style"=>"white-space: normal" %>
 					<% end %>
 					<% if @counter == 3 %>
 						<%= f.hidden_field :quiz3, value: false %>
-						<%= f.submit @reason.wrong_answer3, "data-theme"=>"j", "data-icon"=>"check" %>
+						<%= f.submit @reason.wrong_answer3, "data-theme"=>"j", "data-icon"=>"check", "style"=>"white-space: normal" %>
 					<% end %>
 					<% if @counter == 4 %>
 						<%= f.hidden_field :quiz4, value: false %>
-						<%= f.submit @reason.wrong_answer3, "data-theme"=>"j", "data-icon"=>"check" %>
+						<%= f.submit @reason.wrong_answer3, "data-theme"=>"j", "data-icon"=>"check", "style"=>"white-space: normal" %>
 					<% end %>
 				<% end %>	
 			</div>
