@@ -21,9 +21,15 @@
 	<div class = "ui-grid-b">
 		<div class = "ui-block-a"></div>
 		<div class = "ui-block-b">
-			<div>
-				<%= link_to("View Pros & Cons", choose_t_path, "data-role"=> "button", "data-ajax"=>"false", "data-theme"=>"k", "data-icon"=>"arrow-r", "data-iconpos"=>"right", "style"=>"margin: 0 -5em 1em -5em") %>
-			</div>
+			<% if @partB %>	
+				<div>
+					<%= link_to("Quiz Pros & Cons", choose_t_path, "data-role"=> "button", "data-ajax"=>"false", "data-theme"=>"k", "data-icon"=>"arrow-r", "data-iconpos"=>"right", "style"=>"margin: 0 -5em 1em -5em") %>
+				</div>
+			<% else %>
+				<div>
+					<%= link_to("View Pros & Cons", choose_t_path, "data-role"=> "button", "data-ajax"=>"false", "data-theme"=>"k", "data-icon"=>"arrow-r", "data-iconpos"=>"right", "style"=>"margin: 0 -5em 1em -5em") %>
+				</div>
+			<% end %>
 			<div>
 				<a href = "#" data-role = "button" data-rel ="back" style = "margin: 0 -5em 1em -5em" data-theme = "j" data-icon = "back"data-iconpos = "right">Different Topic</a>
 			</div>

@@ -28,13 +28,29 @@ class TempActivitiesController < ApplicationController
           if !params[:temp_activity][:why_fail2].nil?
             redirect_to emailus_path
           elsif !params[:temp_activity][:quiz1].nil?
-            redirect_to showquestion_reason_path(@reason2)
+            if params[:temp_activity][:quiz1].to_s == "true"
+              redirect_to correctanswer_reason_path(@reason1)
+            else
+              redirect_to incorrectanswer_reason_path(@reason1)
+            end
           elsif !params[:temp_activity][:quiz2].nil?
-            redirect_to showquestion_reason_path(@reason3)
+            if params[:temp_activity][:quiz2].to_s == "true"
+              redirect_to correctanswer_reason_path(@reason2)
+            else
+              redirect_to incorrectanswer_reason_path(@reason2)
+            end
           elsif !params[:temp_activity][:quiz3].nil?
-            redirect_to showquestion_reason_path(@reason4)
+            if params[:temp_activity][:quiz3].to_s == "true"
+              redirect_to correctanswer_reason_path(@reason3)
+            else
+              redirect_to incorrectanswer_reason_path(@reason3)
+            end
           elsif !params[:temp_activity][:quiz4].nil?
-            redirect_to emailus_path
+            if params[:temp_activity][:quiz4].to_s == "true"
+              redirect_to correctanswer_reason_path(@reason4)
+            else
+              redirect_to incorrectanswer_reason_path(@reason4)
+            end
           else
             redirect_to showquestion_reason_path(@reason1)
           end

@@ -20,7 +20,7 @@ Arc2::Application.routes.draw do
   
   resources :reasons do
     member do 
-      get :showquestion, :upvote, :downvote
+      get :showquestion, :upvote, :downvote, :correctanswer, :incorrectanswer
     end
   end
   
