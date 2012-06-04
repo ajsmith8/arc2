@@ -8,7 +8,7 @@
 	</div>	
 	
 	<div>
-		<%= form_for(@category_relationship) do |f| %>
+		<%= form_for @category_relationship, html:{"data-ajax"=>"false"} do |f| %>
 			<%= hidden_field_tag "category_relationship[category_ids][]", nil %>
 			<% left = true %>
 			<div class = "ui-grid-a">
