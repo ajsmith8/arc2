@@ -59,7 +59,11 @@ class TempActivitiesController < ApplicationController
     end
 
     def create
-      @hash = params[:temp_activity]
-      redirect_to root_url
+      hash = params[:temp_activity][:why_fail1].to_s
+      if hash == "demo1" || hash == "Demo1" || hash == "DEMO1"
+        redirect_to categories_path
+      else
+        redirect_to root_url
+      end
     end
   end

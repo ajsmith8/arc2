@@ -24,6 +24,7 @@ Arc2::Application.routes.draw do
     end
   end
   
+  match "/password", to: "pages#password"
   match "/admin", to: "sessions#destroy"
   match "/thanks", to: "pages#thanks"
   match "/feedback2", to: "pages#feedback2"

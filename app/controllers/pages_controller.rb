@@ -109,4 +109,8 @@ class PagesController < ApplicationController
     @emailed = true
     redirect_to emailus_path
   end
+  
+  def password
+    @password = TempActivity.new
+  end
 end

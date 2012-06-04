@@ -163,6 +163,21 @@ class ReasonsController < ApplicationController
       @newreason = @reason4
     end
     
+    activity = TempActivity.where(user_id: current_user.id).first
+    if @counter == 1
+      activity.quiz1 = true
+      activity.save
+    elsif @counter == 2
+      activity.quiz2 = true
+      activity.save
+    elsif @counter == 3
+      activity.quiz3 = true
+      activity.save
+    else
+      activity.quiz4 = true
+      activity.save
+    end
+    
      wins = [
        [ 1, 63, 72 ],
        [ 2, 63, 69 ],
@@ -252,6 +267,21 @@ class ReasonsController < ApplicationController
       @newreason = @reason3
     elsif @counter == 3
       @newreason = @reason4
+    end
+    
+    activity = TempActivity.where(user_id: current_user.id).first
+    if @counter == 1
+      activity.quiz1 = false
+      activity.save
+    elsif @counter == 2
+      activity.quiz2 = false
+      activity.save
+    elsif @counter == 3
+      activity.quiz3 = false
+      activity.save
+    else
+      activity.quiz4 = false
+      activity.save
     end
     
      wins = [
