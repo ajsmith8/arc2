@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>fuseGap</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+	<script type="text/javascript">if (window.location.hash == '#_=_')window.location.hash = '';</script>
+    <link rel="stylesheet" href="arc2theme.css" />
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0/jquery.mobile.structure-1.1.0.min.css" />
+	<script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script>
+    <script src="http://connect.facebook.net/en_US/all.js"></script>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+
+</head>
+<body>
+	<%= yield %>
+	
+	<div data-role = "page" id = "menu">
+			<div data-role = "header" data-position = "fixed" data-theme = "f">
+					<div class = "ui-grid-b" style = "padding: 0.5em 0 0.5em 0">
+						<div class = "ui-block-a">
+							<a href = "#" data-rel = "back" data-role = "button" data-mini = "true" data-theme = "f" data-icon = "back">Back</a>
+						</div>
+						<div class = "ui-block-b" style = "text-align: center">Menu</div>
+						<div class = "ui-block-c" style = "text-align: right">
+							<a href = "#" data-rel = "back" data-role = "button" data-mini = "true" data-theme = "f" data-icon = "back" data-iconpos = "right">Back</a>
+						</div>
+					</div>
+			</div>
+			<ul data-role = "listview" data-theme = "i">
+				<li class = "separator" data-theme = "i">Boys</li>
+				<li><a href = "#">andy likes</a></li>
+				<li class = "separator" data-theme = "i">Boys</li>
+				<li><a href = "#">andy really likes</a></li>
+				<li><a href = "#">andy likes</a></li>
+				<li class = "separator" data-theme = "i">Boys</li>
+				<li><a href = "#">andy likes</a></li>
+				<li><a href = "#">andy likes</a></li>
+			</ul>
+		</div>
+		
+		<div data-role = "page" id = "todo">
+			<div data-role = "header" data-position = "fixed" data-theme = "f">
+					<div class = "ui-grid-b" style = "padding: 0.5em 0 0.5em 0">
+						<div class = "ui-block-a">
+							<a href = "#" data-rel = "back" data-role = "button" data-mini = "true" data-theme = "f" data-icon = "back">Back</a>
+						</div>
+						<div class = "ui-block-b" style = "text-align: center">To Do</div>
+						<div class = "ui-block-c" style = "text-align: right">
+							<a href = "#" data-rel = "back" data-role = "button" data-mini = "true" data-theme = "f" data-icon = "back" data-iconpos = "right">Back</a>
+						</div>
+					</div>
+			</div>
+			This is a To Do list
+		</div>
+</body>
+</html>

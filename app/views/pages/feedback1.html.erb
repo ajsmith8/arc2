@@ -1,0 +1,16 @@
+Why did your knowledge not improve for this topic?
+
+<%=form_for @why_fail1, html:{"data-ajax"=>"false"} do |f| %>
+	<%= f.hidden_field :why_fail1, value: "0" %>
+	<%= f.submit "You already knew more than all your friends" %>
+<% end %>
+
+<%=form_for @why_fail1, html:{"data-ajax"=>"false"} do |f| %>
+	<%= f.hidden_field :why_fail1, value: "1" %>
+	<%= f.submit "You misclicked" %>
+<% end %>
+
+<%=form_for @why_fail1, html:{"data-ajax"=>"false"} do |f| %>
+	<%= f.hidden_field :why_fail1, value: "2" %>
+	<%= f.submit "Our information was not helpful" %>
+<% end %>

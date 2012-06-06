@@ -1,0 +1,42 @@
+<div data-role = "page">
+	<div data-role = "header" data-position = "fixed" data-theme = "f">
+		<div class = "ui-grid-b" style = "padding: 0.5em 0 0.5em 0">
+			<div class = "ui-block-a"></div>
+			<div class = "ui-block-b" style = "text-align: center">fuseGap</div>
+			<div class = "ui-block-c" style = "text-align: right">
+				<div style = "margin: 0 0.2em 0 0">4 / 8</div>
+			</div>
+		</div>
+	</div>
+	
+	<div data-role = "content">
+		<p style = "text-align: center; font-size: 1.1em">Roughly how much did you <b>just learn</b> about this topic?</p>
+	</div>
+	
+	<div style = "margin: 0 0.5em 0 0.5em">
+		<%=form_for @friend_question2, html:{"data-ajax"=>"false"} do |f| %>
+			<%= f.hidden_field :friend_question2, value: "4" %>
+			<%= f.submit "A ton", "data-theme"=>"k", "data-icon"=>"arrow-r", "data-iconpos"=>"right" %>
+		<% end %>
+	
+		<%=form_for @friend_question2, html:{"data-ajax"=>"false"} do |f| %>
+			<%= f.hidden_field :friend_question2, value: "3" %>
+			<%= f.submit "A good amount", "data-theme"=>"f", "data-icon"=>"arrow-r", "data-iconpos"=>"right" %>
+		<% end %>
+
+		<%=form_for @friend_question2, html:{"data-ajax"=>"false"} do |f| %>
+			<%= f.hidden_field :friend_question2, value: "2" %>
+			<%= f.submit "A little", "data-theme"=>"g", "data-icon"=>"arrow-r", "data-iconpos"=>"right" %>
+		<% end %>
+
+		<%=form_for @friend_question2, html:{"data-ajax"=>"false"} do |f| %>
+			<%= f.hidden_field :friend_question2, value: "1" %>
+			<%= f.submit "I didn't learn anything", "data-theme"=>"h", "data-icon"=>"arrow-r", "data-iconpos"=>"right" %>
+		<% end %>
+
+		<%=form_for @friend_question2, html:{"data-ajax"=>"false"} do |f| %>
+			<%= f.hidden_field :friend_question2, value: "0" %>
+			<%= f.submit "This made me dumber", "data-theme"=>"i", "data-icon"=>"arrow-r", "data-iconpos"=>"right" %>
+		<% end %>
+	</div>
+</div>

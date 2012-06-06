@@ -1,0 +1,38 @@
+<div data-role = "page">
+	<div data-role = "header" data-position = "fixed" data-theme = "f">
+		<div class = "ui-grid-b" style = "padding: 0.5em 0 0.5em 0">
+			<div class = "ui-block-a"></div>
+			<div class = "ui-block-b" style = "text-align: center">fuseGap</div>
+			<div class = "ui-block-c" style = "text-align: right">
+				<% if @partB %>
+					<div style = "margin: 0 0.2em 0 0">4 / 8</div>
+				<% else %>
+					<div style = "margin: 0 0.2em 0 0">1 / 8</div>
+				<% end %>
+			</div>
+		</div>
+	</div>
+	
+	<div>
+		<p style = "text-align: center"><b><%= @topic.title %></b></p>
+		<div style = "font-size: 0.85em; margin: 1em 0.3em 2em 0.3em"><%= simple_format(auto_link(@topic.description)) %></div>
+	</div>
+	
+	<div class = "ui-grid-b">
+		<div class = "ui-block-a"></div>
+		<div class = "ui-block-b">
+			<% if @partB %>	
+				<div>
+					<%= link_to("Pros & Cons Quiz", choose_t_path, "data-role"=> "button", "data-ajax"=>"false", "data-theme"=>"k", "data-icon"=>"arrow-r", "data-iconpos"=>"right", "style"=>"margin: 0 -5em 1em -5em") %>
+				</div>
+			<% else %>
+				<div>
+					<%= link_to("View Pros & Cons", choose_t_path, "data-role"=> "button", "data-ajax"=>"false", "data-theme"=>"k", "data-icon"=>"arrow-r", "data-iconpos"=>"right", "style"=>"margin: 0 -5em 1em -5em") %>
+				</div>
+			<% end %>
+			<div>
+				<a href = "#" data-role = "button" data-rel ="back" style = "margin: 0 -5em 1em -5em" data-theme = "j" data-icon = "back"data-iconpos = "right">Different Topic</a>
+			</div>
+		</div>
+	</div>
+</div>

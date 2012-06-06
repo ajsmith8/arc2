@@ -1,0 +1,35 @@
+<div class="ui-grid-b">
+	<div class="ui-block-a"></div>
+	<div class="ui-block-b">
+		<div style="margin: 0.7em -2.5em 0.7em -2.5em"><%= link_to("Back", "#", "data-role" => "button", "data-theme"=>"e", "data-icon"=>"back", "data-rel"=>"back")%></div>
+	</div>
+</div>
+
+<%= form_for @topic, html:{"data-ajax"=>"false"} do |f| %>
+
+  <div class="field", style="margin: 0 0 -1em 0;">
+    <%= f.text_area :title, "placeholder"=>"Submit a new controversial topic/question!"%></br>
+  </div>
+	<div data-role="collapsible">
+  	<h2>Optional: Add Description</h2>
+		<p style="font-size: 0.9em; margin: -0.2em 0 0.8em 0; line-height: 125%">This field is meant to educate users about the your topic's relevant background information.  This will be editable by other users, wiki-style.</p>
+  	<div class="field", style="margin: 0 0 -1em 0">
+	    <%= f.text_area :description, "placeholder"=>" Add a brief, objective explanation ... "%>
+	  </div>
+	</div>
+	
+	<div data-role="collapsible">
+  	<h2>Optional: Add Majority</h2>
+		<p style="font-size: 0.9em; margin: -0.2em 0 0.8em 0; line-height: 125%">pro or con</p>
+		<%= f.text_area :majority %>
+	</div>
+	
+	<div class="ui-grid-b">
+		<div class="ui-block-a"></div>
+		<div class="ui-block-b">
+			<div class="actions", style="margin: 0.7em -2.5em 0.7em -2.5em">
+		    <%= f.submit "Submit!", "data-theme"=>"b", "data-icon"=>"check"%>
+		  </div>
+		</div>
+	</div>
+<% end %>

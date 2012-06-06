@@ -1,0 +1,107 @@
+<div data-role="page" id="main">
+	<div data-role = "header" data-position = "fixed" data-theme = "f">
+		<div class = "ui-grid-b" style = "padding: 0.5em 0 0.5em 0">
+			<div class = "ui-block-a"></div>
+			<div class = "ui-block-b" style = "text-align: center">fuseGap</div>
+			<div class = "ui-block-c" style = "text-align: right">
+				<div style = "margin: 0 0.2em 0 0"><%= @counter + 4 %> / 8</div>
+			</div>
+		</div>
+	</div>
+	
+	<div style="white-space: normal; min-height: 1em; padding: 0.4em; margin: 0 0 0 0;">
+		<div class="ui-grid-b">
+			<div class="ui-block-a">	
+				<p style="margin: 1em 0 0 0; text-align: center; color: #33cc33; font-size: 1.15em; font-weight: bold;">
+					Correct!</p>
+			</div>
+			<div class = "ui-block-b" align = "center">
+				<img src=<%=@winpath%> width=<%=@winwidth%> height=<%=@winheight%>/>
+			</div>
+			<div class="ui-block-c">	
+				<p style="margin: 1em 0 0 0; text-align: center; color: #33cc33; font-size: 1.15em; font-weight: bold;">
+					Awesome!</p>
+			</div>
+		</div>	
+	</div>
+	
+	<div data-role="header" data-theme="c" style="white-space: normal; min-height: 1em;
+		padding: 0.4em 0.3em 0.4em 0.3em">	
+		<p style="text-align: center"><%= @reason.title %></p>
+	</div>
+
+	<div class = "ui-grid-b">
+		<div class = "ui-block-a"></div>
+		<div class = "ui-block-b">
+			<div style = "margin: 0 -5em 0 -5em">
+				<div>
+					<a href = "#reasoninfo" data-role = "button" data-theme = "k" data-icon = "info">Learn More</a>
+				</div>
+				<div>
+					<% if !@newreason.nil? %>
+						<%= link_to "Got It", showquestion_reason_path(@newreason), {"data-role"=>"button", "data-theme"=>"j", "data-role"=>"button", "data-icon"=>"check", "data-ajax"=>"false"}%>
+					<% else %>
+						<%= link_to "Got It", emailus_path, {"data-role"=>"button", "data-theme"=>"j", "data-role"=>"button", "data-icon"=>"check"}%>
+					<% end %>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<div data-role = "page" id = "dispute">
+	<div data-role = "header" data-position = "fixed" data-theme = "f">
+		<h1>fuseGap</h1>
+	</div>
+	
+	<div class = "content">
+		<p style = "text-align: center">Under construction, sorry!</p>
+	</div>
+	
+	<div class = "ui-grid-b">
+		<div class = "ui-block-a"></div>
+		<div class = "ui-block-b">
+			<div>
+				<a href = "#" data-role = "button" data-rel ="back" style = "margin: 0 -5em 1em -5em" data-theme = "f" data-icon = "back">Back</a>
+			</div>
+		</div>
+	</div>
+	
+	<div data-role = "footer" data-position = "fixed" data-theme = "f">
+		<h1>fuseGap</h1>
+	</div>
+</div>
+
+<div data-role = "page" id = "reasoninfo">
+	<div data-role = "header" data-position = "fixed" data-theme = "f">
+		<div class = "ui-grid-b" style = "padding: 0.5em 0 0.5em 0">
+			<div class = "ui-block-a"></div>
+			<div class = "ui-block-b" style = "text-align: center">fuseGap</div>
+			<div class = "ui-block-c" style = "text-align: right">
+				<div style = "margin: 0 0.2em 0 0"><%= @counter + 4 %> / 8</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class = "content" style = "margin: 0 0.5em 0 0.5em">
+		<p><%= simple_format(auto_link(@reason.description)) %></p>
+	</div>
+	<div class = "ui-grid-b">
+		<div class = "ui-block-a"></div>
+		<div class = "ui-block-b">
+			<div style = "margin: 0 -5em 0 -5em">
+				<div>
+					<% if !@newreason.nil? %>
+						<%= link_to "Got It", showquestion_reason_path(@newreason), {"data-role"=>"button", "data-theme"=>"k", "data-role"=>"button", "data-icon"=>"check", "data-ajax"=>"false"}%>
+					<% else %>
+						<%= link_to "Got It", emailus_path, {"data-role"=>"button", "data-theme"=>"k", "data-role"=>"button", "data-icon"=>"check"}%>
+					<% end %>
+				</div>
+				<div>
+					<a href = "#dispute" data-role = "button" data-theme = "j" data-icon = "alert">Dispute Source</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

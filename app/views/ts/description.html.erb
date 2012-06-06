@@ -1,0 +1,23 @@
+<div class="ui-grid-b"> 
+	<div class="ui-block-a">
+		<div style="margin: 0 -1em 0 0">
+			<%= link_to("Back", @topic, "data-role" => "button", "data-theme"=>"e", "data-icon"=>"back", "data-mini"=>"true", "data-transition"=>"slideup")%>
+		</div>
+	</div>
+	<div class="ui-block-b"></div>
+	<div class="ui-block-c">
+		<div style="margin: 0 0 0.6em -1em">
+			<%= link_to("Edit", edit_t_path(@topic), "data-role" => "button", "data-theme"=>"c", "data-icon"=>"gear", "data-mini"=>"true", "data-iconpos"=>"right")%>
+		</div>
+	</div>
+</div>
+
+<ul data-role="listview" data-theme="c" style="white-space: normal; margin: 0 -0.8em 0 -0.8em;">
+	<li style="text-align: center;">
+		<div style="margin: -0.3em 0 -0.3em 0;"><%=@topic.title %></div>
+	</li>
+</ul>
+
+<div style="margin:0.5em 0.2em 0 0.3em; line-height: 125%; font-size: 0.9em;">
+	<p> <%=simple_format(auto_link(@topic.description))%> </p>
+</div>

@@ -1,0 +1,29 @@
+<div data-role="content", style="padding: 0.65em 0.1em 0 0.1em;">
+	<ul data-role="listview" data-filter="true" data-inset="true" data-filter-placeholder=" fuseGap!  Type to filter topics...">
+		<% toggle = 0 %>
+		<% @topics.each do |i| %>
+			<% #filter = i.tags + " "%>
+			<% #filter += i.title %>
+			<% filter = "" %>
+			<% if toggle % 2 == 0 %>
+				<li data-filtertext="<%=filter%>">
+					<%= link_to i.title, i, {"style"=>"white-space: normal; line-height:135%; font-size: 0.8em; padding: 0.5em 2.2em 0.5em 0.5em;", "data-ajax"=>"false"}%>
+				</li>
+			<% else %>
+				<li data-filtertext="<%=filter%>">
+					<%= link_to i.title, i, {"style"=>"white-space: normal; line-height:135%; font-size: 0.8em; color:#00007d; padding: 0.5em 2.2em 0.5em 0.5em;", "data-ajax"=>"false"}%>
+				</li>
+			<% end%>
+			<% toggle += 1%>
+		<% end %>
+	</ul>
+</div>
+
+<div data-role="footer" data-position="fixed">
+	<div data-role="navbar" data-iconpos="top" style="background-color:#303030;">
+		<ul>
+			<li><%= link_to "About", "#", {"data-role"=>"button", "data-icon"=>"info", "data-theme"=>"a"}%></li>
+			<li><%= link_to "New Topic", new_t_path, {"data-role"=>"button", "data-icon"=>"gear", "data-theme"=>"a"}%></li>
+		</ul>
+	</div>
+</div>

@@ -1,0 +1,221 @@
+<div data-role="page" id="pros" data-url="/ts/<%=@topic.url%>">
+	<div data-role="navbar" data-iconpos="right" style="background-color:#303030;">
+		<ul>
+			<li><%= link_to "Home", ts_path, {"data-role"=>"button", "data-mini"=>"true", "data-icon"=>"home", "data-theme"=>"a"}%></li>
+			<li>
+				<%= link_to(votepros_t_path(@topic), {"data-ajax"=>"false", "data-theme"=>"a", "data-icon"=>"gear", "data-role"=>"button"}) do%>
+				<span>Vote! </span>
+				<% end %>
+			</li>
+		</ul>
+	</div>
+
+	<ul data-role="listview" data-split-icon="info" data-split-theme="c">
+		<li>
+			<a href="#"><p style="margin: -0.3em -3.3em -0.5em -0.8em; text-align: center; line-height:135%; font-size: 0.95em; font-weight: bold; white-space: normal;"><%= @topic.title %></p></a>
+			<%= link_to "Topic Description", description_t_path(@topic), {"data-icon"=>"info", "data-iconpos"=>"notext", "data-theme"=>"e", "data-transition"=>"slidedown", "class"=>"ui-btn-right" }%>
+		</li>
+	</ul>
+	
+	<div class="ui-grid-a">
+		<div class="ui-block-a">
+			<div style="margin: 0 -3.5em 0 0"><a href="#" data-role="button", data-icon="arrow-d", data-theme="c", data-iconpos="right", data-mini="true"> Pros </a></div>
+		</div>
+		<div class="ui-block-b">
+			<div style="margin: 0 0 0 3.5em"><a href="#cons" data-role="button", data-theme="b", data-mini="true", data-transition="flip"> Cons </a></div>
+		</div>
+	</div>
+
+	<div data-role="content">
+		<ul data-role="listview">
+			<% iter = 0 %>
+			<% @pros.each do |i|%>
+				<% if iter % 2 == 0 %>	
+					<li>
+						<%= link_to(i, :style=>"white-space: normal; margin: 0 -1.6em 0 -0.8em; font-size: 0.75em;") do %> <%= i.title %>
+							<span class="ui-li-count"><%=i.score%></span>
+						<% end %>
+					</li>
+				<% else %>
+					<li>
+						<%= link_to(i, :style=>"white-space: normal; margin: 0 -1.6em 0 -0.8em; font-size: 0.75em; color: #606060;") do %> <%= i.title %>
+							<span class="ui-li-count"><%=i.score%></span>
+						<% end %>
+					</li>
+				<% end %>
+				<% iter += 1%>
+			<% end %>
+		</ul>
+	</div>
+	
+	<div class="ui-grid-a">
+		<div class="ui-block-a"></div>
+		<div class="ui-block-b">
+			<div style="margin: 0.7em 0 0 0">
+		    <a href="#addnewpro" data-role="button", data-theme="c", data-mini="true", data-icon="plus" data-transition="flip"> Add a <span style="color: #335CD6;"> Pro</span>!</a>
+		  </div>
+		</div>
+	</div>
+</div>
+
+<div data-role="page" id="cons">
+	<div data-role="navbar" data-iconpos="right" style="background-color:#303030">
+		<ul>
+			<li><%= link_to "Home", ts_path, {"data-role"=>"button", "data-mini"=>"true", "data-icon"=>"home", "data-theme"=>"a"}%></li>
+			<li>
+				<%= link_to(votecons_t_path(@topic), {"data-ajax"=>"false", "data-theme"=>"a", "data-icon"=>"gear", "data-role"=>"button"}) do%>
+				Vote!
+				<% end %>
+			</li>
+		</ul>
+	</div>
+
+	<ul data-role="listview" data-split-icon="info" data-split-theme="c">
+		<li>
+			<a href="#"><p style="margin: -0.3em -3.3em -0.5em -0.8em; text-align: center; line-height:135%; font-size: 0.95em; font-weight: bold; white-space: normal;"><%= @topic.title %></p></a>
+			<%= link_to "Topic Description", description_t_path(@topic), {"data-icon"=>"info", "data-iconpos"=>"notext", "data-theme"=>"e", "data-transition"=>"slidedown", "class"=>"ui-btn-right" }%>
+		</li>
+	</ul>
+	
+	<div class="ui-grid-a">
+		<div class="ui-block-a">
+			<div style="margin: 0 3.5em 0 0"><a href="#pros" data-role="button", data-theme="b", data-mini="true", data-transition="flip"> Pros </a></div>
+		</div>
+		<div class="ui-block-b">
+			<div style="margin: 0 0 0 -3.5em"><a href="#" data-role="button", data-icon="arrow-d", data-theme="c", data-iconpos="left", data-mini="true"> Cons </a></div>
+		</div>
+	</div>
+
+	<div data-role="content">
+		<ul data-role="listview">
+			<% iter = 0 %>
+			<% @cons.each do |i|%>
+				<% if iter % 2 == 0 %>	
+					<li>
+						<%= link_to(i, :style=>"white-space: normal; margin: 0 -1.6em 0 -0.8em; font-size: 0.75em;") do %> <%= i.title %>
+							<span class="ui-li-count"><%=i.score%></span>
+						<% end %>
+					</li>
+				<% else %>
+					<li>
+						<%= link_to(i, :style=>"white-space: normal; margin: 0 -1.6em 0 -0.8em; font-size: 0.75em; color: #707070;") do %> <%= i.title %>
+							<span class="ui-li-count"><%=i.score%></span>
+						<% end %>
+					</li>
+				<% end %>
+				<% iter += 1%>
+			<% end %>
+		</ul>
+	</div>
+	
+	<div class="ui-grid-a">
+		<div class="ui-block-a"></div>
+		<div class="ui-block-b">
+			<div style="margin: 0.7em 0 0 0">
+		    <a href="#addnewcon" data-role="button", data-theme="c", data-mini="true", data-icon="plus" data-transition="flip"> Add a <span style="color: #335CD6;"> Con</span>!</a>
+		  </div>
+		</div>
+	</div>
+</div>
+
+<div data-role="page" id="addnewpro">
+	<div class="ui-grid-b">
+		<div class="ui-block-a"></div>
+		<div class="ui-block-b">
+			<div style="margin: 0.7em -2.5em 0.7em -2.5em"><%= link_to("Back", "#", "data-role" => "button", "data-theme"=>"e", "data-icon"=>"back", "data-rel"=>"back")%></div>
+		</div>
+	</div>
+
+	<%= form_for @newpro, html:{"data-ajax"=>"false"} do |f| %>
+		<%= f.hidden_field :t_id, value: @topic.id %>
+		<%= f.hidden_field :is_pro, value: true %>
+	  <div class="field", style="margin: 0 0 -1em 0;">
+	    <%= f.text_area :title, "placeholder"=>"Add a 'Pro' reason to the topic!"%></br>
+	  </div>
+		<div data-role="collapsible">
+	  	<h2><span style="font-size: 0.9em; color: #3059AC;">Optional:</span><span style="font-size: 0.9em;"> Sources/Additional Info</span></h2>
+			<p style="font-size: 0.9em; margin: -0.2em 0 0.8em 0; line-height: 125%">Cite your sources here, or at least provide more information about your post.</p>
+	  	<div class="field", style="margin: 0 0 -0.8em 0">
+		    <%= f.text_area :description %>
+		  </div>
+		</div>
+		<div data-role="collapsible">
+			<h2><span style="font-size: 0.9em; color: #3059AC;">Optional:</span><span style="font-size: 0.9em;"> Create the Quiz Question</span></h2>
+			<div class="field", style="margin: 0 0 -1em 0;">
+		    <%= f.text_area :question, "placeholder"=>"Type quiz question here..."%></br>
+		  </div>
+			<div class="field", style="margin: 0 0 -1em 0;">
+		    <%= f.text_field :correct_answer, "placeholder"=>"Correct Answer ..."%></br>
+		  </div>
+			<div class="field", style="margin: 0 0 -1em 0;">
+		    <%= f.text_field :wrong_answer1, "placeholder"=>"Wrong Answer 1 ..."%></br>
+		  </div>
+			<div class="field", style="margin: 0 0 -1em 0;">
+		    <%= f.text_field :wrong_answer2, "placeholder"=>"Wrong Answer 2 ..."%></br>
+		  </div>
+			<div class="field", style="margin: 0 0 -1em 0;">
+		    <%= f.text_field :wrong_answer3, "placeholder"=>"Wrong Answer 3 ..."%></br>
+		  </div>
+		</div>
+
+		<div class="ui-grid-b">
+			<div class="ui-block-a"></div>
+			<div class="ui-block-b">
+				<div class="actions", style="margin: 0.7em -2.5em 0.7em -2.5em">
+			    <%= f.submit "Submit!", "data-theme"=>"b", "data-icon"=>"check"%>
+			  </div>
+			</div>
+		</div>	
+	<% end %>
+</div>
+
+<div data-role="page" id="addnewcon">
+	<div class="ui-grid-b">
+		<div class="ui-block-a"></div>
+		<div class="ui-block-b">
+			<div style="margin: 0.7em -2.5em 0.7em -2.5em"><%= link_to("Back", "#", "data-role" => "button", "data-theme"=>"e", "data-icon"=>"back", "data-rel"=>"back")%></div>
+		</div>
+	</div>
+
+	<%= form_for @newcon, html:{"data-ajax"=>"false"} do |f| %>
+		<%= f.hidden_field :t_id, value: @topic.id %>
+		<%= f.hidden_field :is_pro, value: false %>
+	  <div class="field", style="margin: 0 0 -1em 0;">
+	    <%= f.text_area :title, "placeholder"=>"Add a 'Con' reason to the topic!"%></br>
+	  </div>
+		<div data-role="collapsible">
+	  	<h2><span style="font-size: 0.9em; color: #3059AC;">Optional:</span><span style="font-size: 0.9em;"> Sources/Additional Info</span></h2>
+			<p style="font-size: 0.9em; margin: -0.2em 0 0.8em 0; line-height: 125%">Cite your sources here, or at least provide more information about your post.</p>
+	  	<div class="field", style="margin: 0 0 -0.8em 0">
+		    <%= f.text_area :description %>
+		  </div>
+		</div>
+		<div data-role="collapsible">
+			<h2><span style="font-size: 0.9em; color: #3059AC;">Optional:</span><span style="font-size: 0.9em;"> Create the Quiz Question</span></h2>
+			<div class="field", style="margin: 0 0 -1em 0;">
+		    <%= f.text_area :question, "placeholder"=>"Type quiz question here..."%></br>
+		  </div>
+			<div class="field", style="margin: 0 0 -1em 0;">
+		    <%= f.text_field :correct_answer, "placeholder"=>"Correct Answer ..."%></br>
+		  </div>
+			<div class="field", style="margin: 0 0 -1em 0;">
+		    <%= f.text_field :wrong_answer1, "placeholder"=>"Wrong Answer 1 ..."%></br>
+		  </div>
+			<div class="field", style="margin: 0 0 -1em 0;">
+		    <%= f.text_field :wrong_answer2, "placeholder"=>"Wrong Answer 2 ..."%></br>
+		  </div>
+			<div class="field", style="margin: 0 0 -1em 0;">
+		    <%= f.text_field :wrong_answer3, "placeholder"=>"Wrong Answer 3 ..."%></br>
+		  </div>
+		</div>
+
+		<div class="ui-grid-b">
+			<div class="ui-block-a"></div>
+			<div class="ui-block-b">
+				<div class="actions", style="margin: 0.7em -2.5em 0.7em -2.5em">
+			    <%= f.submit "Submit!", "data-theme"=>"b", "data-icon"=>"check"%>
+			  </div>
+			</div>
+		</div>	
+	<% end %>
+</div>

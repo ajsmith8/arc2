@@ -1,0 +1,19 @@
+<div>
+	<%=form_for @friend_question2, html:{"data-ajax"=>"false"} do |f| %>
+	<div class = "ui-grid-b">
+		<div class = "ui-block-a"></div>
+		<div class = "ui-block-b">
+			<div style="margin: 0 -15em 0 -5em">
+				<label for="timeout"></label>
+				<input type="range" name="temp_activity[friend_question2]" id="timeout" value="5" min="0" max="10" step="1" />
+				<style media="screen" type="text/css">
+				input.ui-slider-input {display: none;}
+				</style>
+			</div>
+			<div style = "margin: 0 0 0 0">
+				<%= f.submit "Next" %>
+				<% end %>
+			</div>
+		</div>
+	</div>
+</div>

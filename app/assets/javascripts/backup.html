@@ -1,0 +1,81 @@
+$(function(){
+    var menuStatus;
+ 
+    $("a.showMenu").click(function(){
+        if(menuStatus != true){
+        $(".ui-page-active").animate({
+            marginLeft: "250px",
+          }, 300, function(){menuStatus = true});
+          return false;
+          } else {
+            $(".ui-page-active").animate({
+            marginLeft: "0px",
+          }, 300, function(){menuStatus = false});
+            return false;
+          }
+    });
+ 
+    $('.pages').live("swipeleft", function(){
+        if (menuStatus){
+        $(".ui-page-active").animate({
+            marginLeft: "0px",
+          }, 300, function(){menuStatus = false});
+          }
+    });
+ 
+    $('.pages').live("swiperight", function(){
+        if (!menuStatus){
+        $(".ui-page-active").animate({
+            marginLeft: "165px",
+          }, 300, function(){menuStatus = true});
+          }
+    });
+ 
+    $("#menu li a").click(function(){
+        var p = $(this).parent();
+        if($(p).hasClass('active')){
+            $("#menu li").removeClass('active');
+        } else {
+            $("#menu li").removeClass('active');
+            $(p).addClass('active');
+        }
+    });
+ 
+});
+
+
+
+
+<head>
+	<title>FB Style Menu</title>
+	<meta id="extViewportMeta" name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	<link rel="stylesheet" href="css/jquery.mobile-1.0rc2.min.css" />
+	<link rel="stylesheet" href="css/main.css?v=31" />
+	<script type="text/javascript" src="js/jquery-1.6.4.min.js"></script>
+	<script type="text/javascript" src="js/jquery.mobile-1.0rc2.min.js"></script>
+	<script type="text/javascript" src="test.js"></script>
+</head> 
+
+<div data-role="page" class="pages" id="home">
+	<div data-role="header">
+		<a href="#"class="showMenu">Menu</a>
+		<h1>FB Style Menu</h1>
+	</div><!-- /header -->
+	
+	<div data-role="content">
+		<p><strong>Note: You can swipe right/left to show/close menu.</strong></p>
+	</div>
+</div>
+
+<div id = "menu">
+	<h3>Menu</h3>
+	<ul>
+		<li class="active"><a href="#home" class="contentLink">Home </a></li>
+		<li><a href="#home" data-role = "button" class="contentLink">About </a></li>
+		<li><a href="#home" class="contentLink">Portfolio </a></li>
+		<li><a href="#home" class="contentLink">Contact </a></li>
+			
+	</ul>
+</div>

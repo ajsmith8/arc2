@@ -1,0 +1,45 @@
+<div data-role = "page">
+	<div data-role = "header" data-position = "fixed" data-theme = "f">
+		<h1>fuseGap</h1>
+	</div>
+	
+	<div data-role = "content">
+		<p style = "text-align: center">Select some categories that interest you:</p>
+	</div>	
+	
+	<div>
+		<%= form_for @category_relationship, html:{"data-ajax"=>"false"} do |f| %>
+			<%= hidden_field_tag "category_relationship[category_ids][]", nil %>
+			<% left = true %>
+			<div class = "ui-grid-a">
+			<% Category.all.each do |category| %>
+				<% if left %>
+					<div class = "ui-block-a">
+						<div style = "margin: 0 0.5em 0 0.5em">
+							<%= check_box_tag "category_relationship[category_ids][]", category.id, @ids.include?(category.id), id: dom_id(category), "data-theme"=>"k"%>
+							<%= label_tag dom_id(category), category.name %>
+						</div>
+						<% left = false %>
+					</div>
+				<% else %>
+					<div class = "ui-block-b">
+						<div style = "margin: 0 0.5em 0 0.5em">
+							<%= check_box_tag "category_relationship[category_ids][]", category.id, @ids.include?(category.id), id: dom_id(category), "data-theme"=>"k"%>
+							<%= label_tag dom_id(category), category.name %>
+						</div>
+						<% left = true %>
+					</div>
+				<% end %>
+			<% end %>
+			</div>
+			<div class = "ui-grid-b">
+				<div class = "ui-block-a"></div>
+				<div class = "ui-block-b">
+					<div style = "margin: 0 -5em 0 -5em">
+					<%= f.submit "Submit", "data-theme"=>"j" %>
+					</div>
+				</div>
+			</div>
+		<% end %>
+	</div>
+</div>

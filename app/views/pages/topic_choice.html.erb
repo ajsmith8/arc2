@@ -1,0 +1,49 @@
+<div data-role = "page">
+	<% if @activityarray.t1_id != nil %>
+		<div data-role = "header" data-position = "fixed" data-theme = "f">
+			<div class = "ui-grid-b" style = "padding: 0.5em 0 0.5em 0">
+				<div class = "ui-block-a"></div>
+				<div class = "ui-block-b" style = "text-align: center">fuseGap</div>
+				<div class = "ui-block-c" style = "text-align: right">
+					<div style = "margin: 0 0.2em 0 0">4 / 8</div>
+				</div>
+			</div>
+		</div>
+		
+		<div data-role = "content">
+			<p style = "text-align: center; font-size: 1.0em">You've clicked through a topic, but can you also <b>pass a quiz?</br></br>Pick another topic and find out!</b></p>
+		</div>
+			<ul data-role = "listview">
+				<% blue = true %>
+				<% @topicchoices.each do |i|%>
+					<% if blue %>
+						<li><%= link_to(T.find_by_id(i.id).title, topicdescription_t_path(T.find_by_id(i.id)), "data-theme"=>"", "data-ajax"=>"false", "style"=>"white-space: normal; line-height:135%; font-size: 0.9em; padding: 0.5em 2.2em 0.5em 0.5em;") %></li>
+						<% blue = false %>
+					<% else %>
+						<li><%= link_to(T.find_by_id(i.id).title, topicdescription_t_path(T.find_by_id(i.id)), "data-theme"=>"", "data-ajax"=>"false", "style"=>"white-space: normal; line-height:135%; font-size: 0.9em; padding: 0.5em 2.2em 0.5em 0.5em; color:#00007d;") %></li>
+						<% blue = true %>
+					<% end %>
+				<% end %>
+			</ul>	
+	</div>
+	<% else %>
+		<div data-role = "header" data-position = "fixed" data-theme = "f">
+			<h1>fuseGap</h1>
+		</div>
+	<div data-role = "content">
+		<p style = "text-align: center; font-size: 1.0em"><b>Want to see how quickly you can learn about a topic?</br></br>Pick one and find out!</b></p>
+	</div>
+		<ul data-role = "listview">
+			<% blue = true %>
+			<% @topicchoices.each do |i|%>
+				<% if blue %>
+					<li><%= link_to(T.find_by_id(i.id).title, topicdescription_t_path(T.find_by_id(i.id)), "data-theme"=>"", "data-ajax"=>"false", "style"=>"white-space: normal; line-height:135%; font-size: 0.9em; padding: 0.5em 2.2em 0.5em 0.5em;") %></li>
+					<% blue = false %>
+				<% else %>
+					<li><%= link_to(T.find_by_id(i.id).title, topicdescription_t_path(T.find_by_id(i.id)), "data-theme"=>"", "data-ajax"=>"false", "style"=>"white-space: normal; line-height:135%; font-size: 0.9em; padding: 0.5em 2.2em 0.5em 0.5em; color:#00007d;") %></li>
+					<% blue = true %>
+				<% end %>
+			<% end %>
+		</ul>	
+</div>
+<% end %>

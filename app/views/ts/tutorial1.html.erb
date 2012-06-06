@@ -1,0 +1,227 @@
+<div data-role = "page" id = "reason1" data-url = "/ts/<%= @topic.url %>/tutorial1">
+	<div data-role = "header" data-position = "fixed" data-theme = "f">
+		<div class = "ui-grid-b" style = "padding: 0.5em 0 0.5em 0">
+			<div class = "ui-block-a"></div>
+			<div class = "ui-block-b" style = "text-align: center">fuseGap</div>
+			<div class = "ui-block-c" style = "text-align: right">
+				<div style = "margin: 0 0.2em 0 0">1 / 8</div>
+			</div>
+		</div>
+	</div>
+	<div class = "content">
+		<p style = "text-align: center; font-size: 1.1em; line-height: 135%; margin: 1em"><%= @reason1.title %></p>
+	</div>
+	<div class = "ui-grid-b">
+		<div class = "ui-block-a"></div>
+		<div class = "ui-block-b">
+			<div>
+				<a href = "#reason1info" data-role = "button" style = "margin: 1em -5em 1em -5em" data-theme = "k" data-icon = "info">Learn More</a>
+			</div>
+			<div>
+				<a href = "#reason2" data-role = "button" style = "margin: 0 -5em 1em -5em" data-theme = "j" data-icon = "check">Got It</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div data-role = "page" id = "reason1info">
+	<div data-role = "header" data-position = "fixed" data-theme = "f">
+		<div class = "ui-grid-b" style = "padding: 0.5em 0 0.5em 0">
+			<div class = "ui-block-a"></div>
+			<div class = "ui-block-b" style = "text-align: center">fuseGap</div>
+			<div class = "ui-block-c" style = "text-align: right">
+				<div style = "margin: 0 0.2em 0 0">1 / 8</div>
+			</div>
+		</div>
+	</div>
+	<div class = "content" style = "margin: 0 0 0 0.5em">
+		<p><%= simple_format(auto_link(@reason1.description)) %></p>
+	</div>
+	<div class = "ui-grid-b">
+		<div class = "ui-block-a"></div>
+		<div class = "ui-block-b">
+			<div>
+				<a href = "#reason2" data-role = "button" style = "margin: 0 -5em 1em -5em" data-theme = "f" data-icon = "check">Got It</a>
+			</div>
+			<div>
+				<a href = "#dispute" data-role = "button" style = "margin: 0 -5em 1em -5em" data-theme = "j" data-icon = "alert">Dispute Source</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div data-role = "page" id = "dispute">
+	<div data-role = "header" data-position = "fixed" data-theme = "f">
+		<h1>fuseGap</h1>
+	</div>
+	<div class = "content">
+		<p style = "text-align: center">Under construction, sorry!</p>
+	</div>
+	<div class = "ui-grid-b">
+		<div class = "ui-block-a"></div>
+		<div class = "ui-block-b">
+			<div>
+				<a href = "#" data-role = "button" data-rel ="back" style = "margin: 0 -5em 1em -5em" data-theme = "f" data-icon = "back">Back</a>
+			</div>
+		</div>
+	</div>
+	<div data-role = "footer" data-position = "fixed" data-theme = "f">
+		<h1>fuseGap</h1>
+	</div>
+</div>
+
+<div data-role = "page" id = "reason2">
+	<div data-role = "header" data-position = "fixed" data-theme = "f">	
+		<div class = "ui-grid-b" style = "padding: 0.5em 0 0.5em 0">
+			<div class = "ui-block-a"></div>
+			<div class = "ui-block-b" style = "text-align: center">fuseGap</div>
+			<div class = "ui-block-c" style = "text-align: right">
+				<div style = "margin: 0 0.2em 0 0">2 / 8</div>
+			</div>
+		</div>
+	</div>
+	<div class = "content">
+		<p style = "text-align: center"><%= @reason2.title %></p>
+	</div>
+	<div class = "ui-grid-b">
+		<div class = "ui-block-a"></div>
+		<div class = "ui-block-b">
+			<div>
+				<a href = "#reason2info" data-role = "button" style = "margin: 1em -5em 1em -5em" data-theme = "k" data-icon = "info">Learn More</a>
+			</div>
+			<div>
+				<a href = "#reason3" data-role = "button" style = "margin: 0 -5em 1em -5em" data-theme = "j" data-icon = "check">Got It</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div data-role = "page" id = "reason2info">
+	<div data-role = "header" data-position = "fixed" data-theme = "f">
+		<div class = "ui-grid-b" style = "padding: 0.5em 0 0.5em 0">
+			<div class = "ui-block-a"></div>
+			<div class = "ui-block-b" style = "text-align: center">fuseGap</div>
+			<div class = "ui-block-c" style = "text-align: right">
+				<div style = "margin: 0 0.2em 0 0">2 / 8</div>
+			</div>
+		</div>
+	</div>
+	<div class = "content" style = "margin: 0 0 0 0.5em">
+		<p><%= simple_format(auto_link(@reason2.description)) %></p>
+	</div>
+	<div class = "ui-grid-b">
+		<div class = "ui-block-a"></div>
+		<div class = "ui-block-b">
+			<div>
+				<a href = "#reason3" data-role = "button" style = "margin: 0 -5em 1em -5em" data-theme = "f" data-icon = "check">Got It</a>
+			</div>
+			<div>
+				<a href = "#dispute" data-role = "button" style = "margin: 0 -5em 1em -5em" data-theme = "j" data-icon = "alert">Dispute Source</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div data-role = "page" id = "reason3">
+	<div data-role = "header" data-position = "fixed" data-theme = "f">
+		<div class = "ui-grid-b" style = "padding: 0.5em 0 0.5em 0">
+			<div class = "ui-block-a"></div>
+			<div class = "ui-block-b" style = "text-align: center">fuseGap</div>
+			<div class = "ui-block-c" style = "text-align: right">
+				<div style = "margin: 0 0.2em 0 0">3 / 8</div>
+			</div>
+		</div>
+	</div>
+	<div class = "content">
+		<p style = "text-align: center"><%= @reason3.title %></p>
+	</div>
+	<div class = "ui-grid-b">
+		<div class = "ui-block-a"></div>
+		<div class = "ui-block-b">
+			<div>
+				<a href = "#reason3info" data-role = "button" style = "margin: 1em -5em 1em -5em" data-theme = "k" data-icon = "info">Learn More</a>
+			</div>
+			<div>
+				<a href = "#reason4" data-role = "button" style = "margin: 0 -5em 1em -5em" data-theme = "j" data-icon = "check">Got It</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div data-role = "page" id = "reason3info">
+	<div data-role = "header" data-position = "fixed" data-theme = "f">
+		<div class = "ui-grid-b" style = "padding: 0.5em 0 0.5em 0">
+			<div class = "ui-block-a"></div>
+			<div class = "ui-block-b" style = "text-align: center">fuseGap</div>
+			<div class = "ui-block-c" style = "text-align: right">
+				<div style = "margin: 0 0.2em 0 0">3 / 8</div>
+			</div>
+		</div>
+	</div>
+	<div class = "content" style = "margin: 0 0 0 0.5em">
+		<p><%= simple_format(auto_link(@reason3.description)) %></p>
+	</div>
+	<div class = "ui-grid-b">
+		<div class = "ui-block-a"></div>
+		<div class = "ui-block-b">
+			<div>
+				<a href = "#reason4" data-role = "button" style = "margin: 0 -5em 1em -5em" data-theme = "f" data-icon = "check">Got It</a>
+			</div>
+			<div>
+				<a href = "#dispute" data-role = "button" style = "margin: 0 -5em 1em -5em" data-theme = "j" data-icon = "alert">Dispute Source</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div data-role = "page" id = "reason4">
+	<div data-role = "header" data-position = "fixed" data-theme = "f">
+		<div class = "ui-grid-b" style = "padding: 0.5em 0 0.5em 0">
+			<div class = "ui-block-a"></div>
+			<div class = "ui-block-b" style = "text-align: center">fuseGap</div>
+			<div class = "ui-block-c" style = "text-align: right">
+				<div style = "margin: 0 0.2em 0 0">4 / 8</div>
+			</div>
+		</div>
+	</div>
+	<div class = "content">
+		<p style = "text-align: center"><%= @reason4.title %></p>
+	</div>
+	<div class = "ui-grid-b">
+		<div class = "ui-block-a"></div>
+		<div class = "ui-block-b">
+			<div>
+				<a href = "#reason4info" data-role = "button" style = "margin: 1em -5em 1em -5em" data-theme = "k" data-icon = "info">Learn More</a>
+			</div>
+			<div>
+				<%= link_to("Got It", survey2_path, "data-role"=> "button", "data-ajax"=>"false", "data-theme"=>"j", "data-icon"=>"check", "style"=>"margin: 0 -5em 1em -5em") %>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div data-role = "page" id = "reason4info">
+	<div data-role = "header" data-position = "fixed" data-theme = "f">
+		<div class = "ui-grid-b" style = "padding: 0.5em 0 0.5em 0">
+			<div class = "ui-block-a"></div>
+			<div class = "ui-block-b" style = "text-align: center">fuseGap</div>
+			<div class = "ui-block-c" style = "text-align: right">
+				<div style = "margin: 0 0.2em 0 0">4 / 8</div>
+			</div>
+		</div>
+	</div>
+	<div class = "content" style = "margin: 0 0 0 0.5em">
+		<p><%= simple_format(auto_link(@reason4.description)) %></p>
+	</div>
+	<div class = "ui-grid-b">
+		<div class = "ui-block-a"></div>
+		<div class = "ui-block-b">
+			<div>
+				<%= link_to("Got It", survey2_path, "data-role"=> "button", "data-ajax"=>"false", "data-theme"=>"f", "data-icon"=>"check", "style"=>"margin: 0 -5em 1em -5em") %>
+			</div>
+			<div>
+				<a href = "#dispute" data-role = "button" style = "margin: 0 -5em 1em -5em" data-theme = "j" data-icon = "alert">Dispute Source</a>
+			</div>
+		</div>
+	</div>
+</div>

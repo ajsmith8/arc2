@@ -1,0 +1,33 @@
+<div class="ui-grid-b"> 
+	<div class="ui-block-a">
+		<div style="margin: 0 -1em 0 0">
+			<%= link_to("Back", t_path(T.find_by_id(@reason.t_id)), "data-role" => "button", "data-theme"=>"e", "data-icon"=>"back", "data-mini"=>"true", "data-ajax"=>"false")%>
+		</div>
+	</div>
+	<div class="ui-block-b"></div>
+	<div class="ui-block-c">
+		<div style="margin: 0 0 0.6em -1em">
+			<%= link_to("Edit", edit_reason_path(@reason), "data-role" => "button", "data-theme"=>"c", "data-icon"=>"gear", "data-mini"=>"true", "data-iconpos"=>"right")%>
+		</div>
+	</div>
+</div>
+
+<ul data-role="listview" data-theme="c" style="white-space: normal; margin: 0 -0.8em 0 -0.8em;">
+	<li style="text-align: center;">
+		<div style="margin: -0.3em 0 -0.3em 0;"><%=@reason.title %> <span class="ui-li-count", style="font-size: 1.0em; margin: -0.8em 0.3em 0 0;"><%=@reason.score%></span></div>
+	</li>
+</ul>
+
+<div class="ui-grid-c", style="margin: 0em 0 -0.5em 0;">
+	<div class="ui-block-a"></div>
+	<div class="ui-block-b">
+		<%= link_to "+", upvote_reason_path(@reason), {"data-role"=>"button", "style"=>"color: #198219", "data-transition"=>"none", "data-ajax"=>"false"}%>
+	</div>
+	<div class="ui-block-c">
+		<%= link_to '&#8722;'.html_safe, downvote_reason_path(@reason), {"data-role"=>"button", "style"=>"color: #e60000", "data-transition"=>"none", "data-ajax"=>"false"}%>
+	</div>
+</div>
+
+<div style="margin:0.5em 0.2em 0 0.3em; line-height: 125%; font-size: 0.9em;">
+	<p> <%=simple_format(auto_link(@reason.description))%> </p>
+</div>

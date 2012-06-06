@@ -1,0 +1,176 @@
+<div data-role = "page" id = "quizquestionnotsure">
+	<div data-role = "header" data-position = "fixed" data-theme = "f">
+		<div class = "ui-grid-b" style = "padding: 0.5em 0 0.5em 0">
+			<div class = "ui-block-a"></div>
+			<div class = "ui-block-b" style = "text-align: center">fuseGap</div>
+			<div class = "ui-block-c" style = "text-align: right">
+				<div style = "margin: 0 0.2em 0 0"><%= @counter + 4 %> / 8</div>
+			</div>
+		</div>
+	</div>
+	<div class = "content">
+		<p style = "text-align: center; font-size: 1.1em; line-height: 135%; margin: 1em"><%= @reason.question %></p>
+	</div>
+	
+	<div class = "ui-grid-b">
+		<div class = "ui-block-a"></div>
+		<div class = "ui-block-b">
+			<div>
+				<a href = "#reasoninfo" data-role = "button" style = "margin: 1em -5em 1em -5em" data-theme = "k" data-icon = "info">Not Sure?</a>
+			</div>
+		</div>
+	</div>
+	
+	<% i = 0 %>
+	<% j = 0 %>
+	<% index = rand(4) %>
+	<% while i < 4 %>
+		<% if i == index %>
+			<div style="margin:0.8em 0 0.8em 0; font-size: 0.8em;">
+				<a href = "<%= correctanswer_reason_path(@reason) %>", data-role = "button", data-icon = "check", data-theme = "j", data-ajax = "false">
+					<div style = "white-space: normal">
+						<%= @reason.correct_answer %>
+					</div>
+				</a>
+			</div>
+		<% elsif j == 0 %>	
+			<div style="margin:0.8em 0 0.8em 0; font-size: 0.8em;">
+				<a href = "<%= incorrectanswer_reason_path(@reason) %>", data-role = "button", data-icon = "check", data-theme = "j", data-ajax = "false">
+					<div style = "white-space: normal">
+						<%= @reason.wrong_answer1 %>
+					</div>
+				</a>
+			</div>
+			<% j += 1%>
+		<% elsif j == 1 && @reason.wrong_answer2 != "<blank>"%>
+			<div style="margin:0.8em 0 0.8em 0; font-size: 0.8em;">
+				<a href = "<%= incorrectanswer_reason_path(@reason) %>", data-role = "button", data-icon = "check", data-theme = "j", data-ajax = "false">
+					<div style = "white-space: normal">
+						<%= @reason.wrong_answer2 %>
+					</div>
+				</a>
+			</div>
+			<% j += 1%>
+		<% elsif @reason.wrong_answer3 != "<blank>"%>
+			<div style="margin:0.8em 0 0.8em 0; font-size: 0.8em;">
+				<a href = "<%= incorrectanswer_reason_path(@reason) %>", data-role = "button", data-icon = "check", data-theme = "j", data-ajax = "false">
+					<div style = "white-space: normal">
+						<%= @reason.wrong_answer3 %>
+					</div>
+				</a>
+			</div>
+			<% j += 1%>
+		<% end %>				
+		<% i += 1%>
+  <% end %>	
+
+</div>
+
+<div data-role = "page" id = "quizquestion">
+	<div data-role = "header" data-position = "fixed" data-theme = "f">
+		<div class = "ui-grid-b" style = "padding: 0.5em 0 0.5em 0">
+			<div class = "ui-block-a"></div>
+			<div class = "ui-block-b" style = "text-align: center">fuseGap</div>
+			<div class = "ui-block-c" style = "text-align: right">
+				<div style = "margin: 0 0.2em 0 0"><%= @counter + 4 %> / 8</div>
+			</div>
+		</div>
+	</div>
+	<div class = "content">
+		<p style = "text-align: center; font-size: 1.1em; line-height: 135%; margin: 1em"><%= @reason.question %></p>
+	</div>
+	
+	<% i = 0 %>
+	<% j = 0 %>
+	<% index = rand(4) %>
+	<% while i < 4 %>
+		<% if i == index %>
+			<div style="margin:0.8em 0 0.8em 0; font-size: 0.8em;">
+				<a href = "<%= correctanswer_reason_path(@reason) %>", data-role = "button", data-icon = "check", data-theme = "j", data-ajax = "false">
+					<div style = "white-space: normal">
+						<%= @reason.correct_answer %>
+					</div>
+				</a>
+			</div>
+		<% elsif j == 0 %>	
+			<div style="margin:0.8em 0 0.8em 0; font-size: 0.8em;">
+				<a href = "<%= incorrectanswer_reason_path(@reason) %>", data-role = "button", data-icon = "check", data-theme = "j", data-ajax = "false">
+					<div style = "white-space: normal">
+						<%= @reason.wrong_answer1 %>
+					</div>
+				</a>
+			</div>
+			<% j += 1%>
+		<% elsif j == 1 && @reason.wrong_answer2 != "<blank>"%>
+			<div style="margin:0.8em 0 0.8em 0; font-size: 0.8em;">
+				<a href = "<%= incorrectanswer_reason_path(@reason) %>", data-role = "button", data-icon = "check", data-theme = "j", data-ajax = "false">
+					<div style = "white-space: normal">
+						<%= @reason.wrong_answer2 %>
+					</div>
+				</a>
+			</div>
+			<% j += 1%>
+		<% elsif @reason.wrong_answer3 != "<blank>"%>
+			<div style="margin:0.8em 0 0.8em 0; font-size: 0.8em;">
+				<a href = "<%= incorrectanswer_reason_path(@reason) %>", data-role = "button", data-icon = "check", data-theme = "j", data-ajax = "false">
+					<div style = "white-space: normal">
+						<%= @reason.wrong_answer3 %>
+					</div>
+				</a>
+			</div>
+			<% j += 1%>
+		<% end %>				
+		<% i += 1%>
+  <% end %>
+
+</div>
+
+<div data-role = "page" id = "dispute">
+	<div data-role = "header" data-position = "fixed" data-theme = "f">
+		<h1>fuseGap</h1>
+	</div>
+	
+	<div class = "content">
+		<p style = "text-align: center">Under construction, sorry!</p>
+	</div>
+	
+	<div class = "ui-grid-b">
+		<div class = "ui-block-a"></div>
+		<div class = "ui-block-b">
+			<div>
+				<a href = "#" data-role = "button" data-rel ="back" style = "margin: 0 -5em 1em -5em" data-theme = "f" data-icon = "back">Back</a>
+			</div>
+		</div>
+	</div>
+	
+	<div data-role = "footer" data-position = "fixed" data-theme = "f">
+		<h1>fuseGap</h1>
+	</div>
+</div>
+
+<div data-role = "page" id = "reasoninfo">
+	<div data-role = "header" data-position = "fixed" data-theme = "f">
+		<div class = "ui-grid-b" style = "padding: 0.5em 0 0.5em 0">
+			<div class = "ui-block-a"></div>
+			<div class = "ui-block-b" style = "text-align: center">fuseGap</div>
+			<div class = "ui-block-c" style = "text-align: right">
+				<div style = "margin: 0 0.2em 0 0"><%= @counter + 4 %> / 8</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class = "content" style = "margin: 0 0.5em 0 0.5em">
+		<p><%= simple_format(auto_link(@reason.description)) %></p>
+	</div>
+	<div class = "ui-grid-b">
+		<div class = "ui-block-a"></div>
+		<div class = "ui-block-b">	
+			<div>
+				<a href = "#quizquestion" data-role = "button" style = "margin: 0 -5em 1em -5em" data-theme = "k" data-icon = "check">Quiz Me!</a>
+			</div>
+			<div>
+				<a href = "#dispute" data-role = "button" style = "margin: 0 -5em 1em -5em" data-theme = "j" data-icon = "alert">Dispute Source</a>
+			</div>
+		</div>
+	</div>
+</div>

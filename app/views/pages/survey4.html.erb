@@ -1,0 +1,21 @@
+What % of your friends know more about this topic than you now?
+
+<%=form_for @friend_question4, html:{"data-ajax"=>"false"} do |f| %>
+	<%= f.hidden_field :friend_question4, value: "0" %>
+	<%= f.submit "10%" %>
+<% end %>
+	
+<%=form_for @friend_question4, html:{"data-ajax"=>"false"} do |f| %>
+	<%= f.hidden_field :friend_question4, value: "1" %>
+	<%= f.submit "25%" %>
+<% end %>
+
+<%=form_for @friend_question4, html:{"data-ajax"=>"false"} do |f| %>
+	<%= f.hidden_field :friend_question4, value: "2" %>
+	<%= f.submit "50%" %>
+<% end %>
+
+<%=form_for @friend_question4, html:{"data-ajax"=>"false"} do |f| %>
+	<%= f.hidden_field :friend_question4, value: "3" %>
+	<%= f.submit "90%" %>
+<% end %>
