@@ -16,6 +16,45 @@
 </head>
 <body>
 	<%= yield %>
+	
+	<div data-role = "page" id = "menu">
+			<div data-role = "header" data-position = "fixed" data-theme = "f">
+					<div class = "ui-grid-b" style = "padding: 0.5em 0 0.5em 0">
+						<div class = "ui-block-a">
+							<a href = "#" data-rel = "back" data-role = "button" data-mini = "true" data-theme = "f" data-icon = "back">Back</a>
+						</div>
+						<div class = "ui-block-b" style = "text-align: center">Menu</div>
+						<div class = "ui-block-c" style = "text-align: right">
+							<a href = "#" data-rel = "back" data-role = "button" data-mini = "true" data-theme = "f" data-icon = "back" data-iconpos = "right">Back</a>
+						</div>
+					</div>
+			</div>
+			<ul data-role = "listview" data-theme = "i">
+				<li class = "separator" data-theme = "i">Boys</li>
+				<li><a href = "#">andy likes</a></li>
+				<li class = "separator" data-theme = "i">Boys</li>
+				<li><a href = "#">andy really likes</a></li>
+				<li><a href = "#">andy likes</a></li>
+				<li class = "separator" data-theme = "i">Boys</li>
+				<li><a href = "#">andy likes</a></li>
+				<li><a href = "#">andy likes</a></li>
+			</ul>
+		</div>
+		
+		<div data-role = "page" id = "todo">
+			<div data-role = "header" data-position = "fixed" data-theme = "f">
+					<div class = "ui-grid-b" style = "padding: 0.5em 0 0.5em 0">
+						<div class = "ui-block-a">
+							<a href = "#" data-rel = "back" data-role = "button" data-mini = "true" data-theme = "f" data-icon = "back">Back</a>
+						</div>
+						<div class = "ui-block-b" style = "text-align: center">To Do</div>
+						<div class = "ui-block-c" style = "text-align: right">
+							<a href = "#" data-rel = "back" data-role = "button" data-mini = "true" data-theme = "f" data-icon = "back" data-iconpos = "right">Back</a>
+						</div>
+					</div>
+			</div>
+			This is a To Do list
+		</div>
 </body>
 </html>
 

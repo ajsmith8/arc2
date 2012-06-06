@@ -14,76 +14,76 @@
 ActiveRecord::Schema.define(:version => 20120529203140) do
 
   create_table "categories", :force => true do |t|
-    t.string   "name"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.string    "name"
+    t.timestamp "created_at", :null => false
+    t.timestamp "updated_at", :null => false
   end
 
   create_table "category_relationships", :force => true do |t|
-    t.integer  "category_id"
-    t.integer  "t_id"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
-    t.integer  "user_id"
+    t.integer   "category_id"
+    t.integer   "t_id"
+    t.timestamp "created_at",  :null => false
+    t.timestamp "updated_at",  :null => false
+    t.integer   "user_id"
   end
 
   create_table "reasons", :force => true do |t|
-    t.integer  "t_id"
-    t.string   "question"
-    t.string   "title"
-    t.text     "description"
-    t.integer  "score"
-    t.boolean  "is_pro"
-    t.string   "correct_answer"
-    t.string   "wrong_answer1"
-    t.string   "wrong_answer2"
-    t.string   "wrong_answer3"
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
+    t.integer   "t_id"
+    t.string    "question"
+    t.string    "title"
+    t.text      "description"
+    t.integer   "score"
+    t.boolean   "is_pro"
+    t.string    "correct_answer"
+    t.string    "wrong_answer1"
+    t.string    "wrong_answer2"
+    t.string    "wrong_answer3"
+    t.timestamp "created_at",     :null => false
+    t.timestamp "updated_at",     :null => false
   end
 
   create_table "sessions", :force => true do |t|
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.timestamp "created_at", :null => false
+    t.timestamp "updated_at", :null => false
   end
 
   create_table "temp_activities", :force => true do |t|
-    t.integer  "user_id"
-    t.integer  "t1_id"
-    t.integer  "t2_id"
-    t.string   "friend_question1"
-    t.string   "friend_question2"
-    t.string   "friend_question3"
-    t.string   "friend_question4"
-    t.string   "why_fail1"
-    t.string   "why_fail2"
-    t.datetime "created_at",       :null => false
-    t.datetime "updated_at",       :null => false
-    t.boolean  "quiz1"
-    t.boolean  "quiz2"
-    t.boolean  "quiz3"
-    t.boolean  "quiz4"
+    t.integer   "user_id"
+    t.integer   "t1_id"
+    t.integer   "t2_id"
+    t.string    "friend_question1"
+    t.string    "friend_question2"
+    t.string    "friend_question3"
+    t.string    "friend_question4"
+    t.string    "why_fail1"
+    t.string    "why_fail2"
+    t.timestamp "created_at",       :null => false
+    t.timestamp "updated_at",       :null => false
+    t.boolean   "quiz1"
+    t.boolean   "quiz2"
+    t.boolean   "quiz3"
+    t.boolean   "quiz4"
   end
 
   create_table "ts", :force => true do |t|
-    t.string   "title"
-    t.text     "description"
-    t.string   "url"
-    t.integer  "score"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
-    t.string   "majority"
+    t.string    "title"
+    t.text      "description"
+    t.string    "url"
+    t.integer   "score"
+    t.timestamp "created_at",  :null => false
+    t.timestamp "updated_at",  :null => false
+    t.string    "majority"
   end
 
   create_table "users", :force => true do |t|
-    t.string   "provider"
-    t.string   "uid"
-    t.string   "name"
-    t.string   "email"
-    t.datetime "created_at",                    :null => false
-    t.datetime "updated_at",                    :null => false
-    t.boolean  "is_admin",   :default => false
-    t.boolean  "is_temp",    :default => true
+    t.string    "provider"
+    t.string    "uid"
+    t.string    "name"
+    t.string    "email"
+    t.timestamp "created_at",                    :null => false
+    t.timestamp "updated_at",                    :null => false
+    t.boolean   "is_admin",   :default => false
+    t.boolean   "is_temp",    :default => true
   end
 
 end
